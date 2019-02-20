@@ -1,1 +1,21 @@
+Developers do the changes and checkin their code to source code repository like Git, Jenkins server pull the code under workspace in 
+Jenkins home directory, then it compile the code and run the test cases then it perform source code quality check, if everything goes well 
+it creates package. If something goes wrong send email notifications to the developers, so that they can fix the isssue again they push to Git
+this is how freequently integrate the code.
+
+Once package is creted, automatically deploy it into the test servers for User Acceptance Test, then Finally, the application is manually
+deployed on the production servers for release by taking an aprroval. So continuous dlivery is also a automated process except deploying the
+application in to production based on approval.
+
+continuous deployment is completely automated process right from developers check in their source code to Git to till deployment into the
+production.
+continuous deployment is risky if anything goes wrong in production it becomes messy.
+
+Advantage of contnuous integration
+1. immeadiate feedback to the developers about build result
+2. detecting and fixing the bugs easier
+3. it improves the productivity
+4. it improves the code quality by minimizing the defects
+
+
 
