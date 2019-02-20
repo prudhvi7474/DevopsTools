@@ -23,6 +23,7 @@ Advantage of contnuous integration
 
 how you do build automation? how you trigger the build, is it CI or it is manual(click on build now)?
 by using cron expression
+every 6 hours 
 
 
 
