@@ -1,3 +1,6 @@
+Jenkins is a continuous integration tool. we can do build automation and deployment automation
+Jenkins is a build automation server as well we can do deployment automation also.
+
 Developers do the changes and checkin their code to source code repository like Git, Jenkins server pull the code under workspace in 
 Jenkins home directory, then it compile the code and run the test cases then it perform source code quality check, if everything goes well 
 it creates package. If something goes wrong send email notifications to the developers, so that they can fix the isssue again they push to Git
