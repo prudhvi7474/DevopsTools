@@ -1,4 +1,4 @@
-Jenkins is a continuous integration tool. we can do build automation and deployment automation
+Jenkins is a continuous integration tool. 
 Jenkins is a build automation server as well we can do deployment automation also.
 
 Developers do the changes and checkin their code to source code repository like Git, Jenkins server pull the code under workspace in 
@@ -19,6 +19,10 @@ Advantage of contnuous integration
 2. detecting and fixing the bugs easier
 3. it improves the productivity
 4. it improves the code quality by minimizing the defects
+
+
+how you do build automation?
+
 
 
 
