@@ -1,16 +1,46 @@
-The Application code what we have developed and along with all the dependencies required to run taht application, we can create it as 
-an image(basically we are writing docker file) and push it to the Docker registry. So that we can pull the image and run it in any
-environments using light weight isolated containers without any portability and compatibility issues.
-            As the code travels from Developer's machine to production, there are many different environments it has to go through, to get
-there.each of these environments may have minor differences, docker provides a consistent environment to the application from dev to
-production, easying the code deployment.
-
-containers utilizes minimal system resources like CPU, RAM etc... from HostOS(DockerHost), so that containers are light weight.
-
 basically to deploy an application we have 3 different environments
     1. physical server
     2. Virtual machine
     3. container
+    
+The Application code what we have developed and along with all the dependencies required to run taht application, we can create it as 
+an image(basically we are writing docker file) and push it to the Docker registry. So that we can pull the image and run it in any
+environments using light weight isolated containers without any portability and compatibility issues. and then check whether API is 
+opening or not.
+                    As the code travels from Developer's machine to production, there are many different environments it has to go through,
+to get there.each of these environments may have minor differences, docker provides a consistent environment to the application from dev 
+to production, easying the code deployment.
+
+containers utilizes minimal system resources like CPU, RAM etc... from HostOS(DockerHost), so that containers are light weight.
+
+Our's is a springboot application, we are going deploy our application in to docker containers for high avaialability and zero downtime.
+Docker deployment in a production environment was relatively simple and trouble-free.
+
+Big companies like Google, VMware and Microsoft are using Docker to their Infrastructure.
+
+Managing the containers @large scale - docker swarm or kubernetes.
+
+Basic things to remember:
+1. Create the Dockerfile,which contains all the commands to package the application(.war) with all the  dependency Libraries as an Image
+   vi Dockerfile
+   
+2. build the docker Image with the help of Dockerfile.
+   docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
+      docker build -t ImageName:Tag .
+3. push the Image to Dockerregistry
+      docker Push ImageName:Tag
+4. Pull the Image from the DockerHub   
+      docker pull ImageNmae:Tag
+5. run the image, in order to deploy the container
+      docker run --itd --name containerName -p 8080(dockerhost):80(container) ImageName:tag
+6. to log in to the container or to get in to the container
+      docker exec -it ContainerId /bin/bash
+7. how to inspect the container
+      docker inspect containerId
+
+
+
+
     
     
     
