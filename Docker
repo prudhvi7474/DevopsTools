@@ -8,7 +8,7 @@ an image(basically we are writing docker file) and push it to the Docker registr
 environments using light weight isolated containers without any portability and compatibility issues. and then check whether API is 
 opening or not.
                     As the code travels from Developer's machine to production, there are many different environments it has to go through,
-to get there.each of these environments may have minor differences, docker provides a consistent environment to the application from dev 
+to get there.each of these environments may have minor differences(osVersion etc..), docker provides a consistent environment to the application from dev 
 to production, easying the code deployment.
 
 containers utilizes minimal system resources like CPU, RAM etc... from HostOS(DockerHost), so that containers are light weight.
