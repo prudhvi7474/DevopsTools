@@ -1,4 +1,4 @@
 Whenever we go for a deployment process, we shutdown the server, remove all active connections, drain out the older version and move the
-updated version of the application. 
+updated version of the application and restart the server. 
 
 Zero Down-Time or less down-time with 15min.
