@@ -43,6 +43,10 @@ create an image from the updatedcontainer   or How to update/add a file in the D
       docker commit --m "" oldcontname  ImageName
 docker logs containerId
 docker system prune
+
+
+Q.How to backup and restore Docker containers?
+A.https://www.thegeekdiary.com/how-to-backup-and-restore-docker-containers/
      
       
       
