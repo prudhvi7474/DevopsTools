@@ -37,6 +37,15 @@ Basic things to remember:
       docker exec -it ContainerId /bin/bash
 7. how to inspect the container
       docker inspect containerId
+      
+
+create an image from the updatedcontainer
+      docker commit --m "" oldcontname  ImageName
+docker logs containerId
+docker system prune
+     
+      
+      
 
 
 
