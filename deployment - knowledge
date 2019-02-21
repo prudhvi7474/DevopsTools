@@ -1,4 +1,21 @@
 Whenever we go for a deployment process, we shutdown the server, remove all active connections, drain out the older version and move the
 updated version of the application and restart the server. 
 
-Zero Down-Time or less down-time with 15min.
+Zero Down-Time or less down-time with 15min or Minimize the downtime as much as possible.
+
+during a deployment process, your service is responsive the whole time, means that no requests are dropped at any point during the
+deployment process.
+
+realtime issues:
+Q. Who hasn't had issues when deploying a software change to production? No one right?
+I once accidentally deleted a bin folder from a .NET application in one of four servers when deploying a change. The site was working 
+not continuously or steadily, as a consequence, so I had to check all the servers again to find the one that was having problems. Luckily
+for me, there were only four servers.
+
+ ways to smoothly deploy into production without risking quality
+ 1. ways to smoothly deploy to production without risking quality
+    write a script to do deployments, Then I test the script locally and in the development environment. That way, next time I want to
+    deploy a change, I won't have to worry about missing any steps like creating a folder or giving permissions to some files. I'll just
+    need to run the script again.
+    Terraform, Ansible, and Jenkins
+2.Buil d and Pack Your Application Only Once    
