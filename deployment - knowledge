@@ -1,0 +1,4 @@
+Whenever we go for a deployment process, we shutdown the server, remove all active connections, drain out the older version and move the
+updated version of the application. 
+
+Zero Down-Time
