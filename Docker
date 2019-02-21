@@ -1,1 +1,16 @@
+The Application code what we have developed and along with all the dependencies required to run taht application, we can create it as 
+an image(basically we are writing docker file) and push it to the Docker registry. So that we can pull the image and run it in any
+environments using light weight isolated containers without any portability and compatibility issues.
+            As the code travels from Developer's machine to production, there are many different environments it has to go through, to get
+there.each of these environments may have minor differences, docker provides a consistent environment to the application from dev to
+production, easying the code deployment.
 
+containers utilizes minimal system resources like CPU, RAM etc... from HostOS(DockerHost), so that containers are light weight.
+
+basically to deploy an application we have 3 different environments
+    1. physical server
+    2. Virtual machine
+    3. container
+    
+    
+    
