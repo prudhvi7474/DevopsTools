@@ -33,6 +33,8 @@ Minikube is a tool that makes it easy to run Kubernetes locally. This runs a sin
 ► Namespace, Resource Quotas, and Limit
 
 Pod
+In the VMware world the smallest atomic unit of deployment is the virtual machine(VM). In the docker world it is container.In the kubernetes
+world it is pod.
 A Pod is the smallest deployable unit that can be created, scheduled, and managed. It’s a logical collection of containers that belong to
 an application.
 Group of containers into logical units
