@@ -16,6 +16,9 @@ containers utilizes minimal system resources like CPU, RAM etc... from HostOS(Do
 Our's is a springboot application, we are going deploy our application in to docker containers for high avaialability and zero downtime.
 Docker deployment in a production environment was relatively simple and trouble-free.
 
+Like the popular version control software Git, Docker has a social aspect in that developers and sysadmins can share their images
+via Docker Hub.
+
 Big companies like Google, VMware and Microsoft are using Docker to their Infrastructure.
 
 Each application will run on a separate container and will have its own set of libraries and dependencies. This also ensures that
@@ -52,10 +55,111 @@ docker system prune
 
 Q.How to backup and restore Docker containers?
 A.https://www.thegeekdiary.com/how-to-backup-and-restore-docker-containers/
-     
-      
-      
 
+
+
+Storage in Docker using volumes:
+--------------------------------
+Q.What are Volumes, and Why Do We Need Them?
+  Volumes are external storage areas used to store data produced by a Docker container. Volumes can be located on the docker host or 
+  even on remote machines.
+                When a container dies all the data it has created (logs, database records, etc...) dies with it. So how do we ensure
+  that data produced by containers is stored? Volumes are the answer to this question. Volumes are used to store the data generated
+  by a container so even when its gone the data it produces still lives on. 
+  
+Q.Volume Types?
+here are two main types of volumes, data volumes and bind mounts. 
+data volumes are used to externally store data, produced from a docker container.
+
+creating a docker volume with dockerfile:
+Data volumes can be defined in a Dockerfile using the VOLUME command
+vi Dockerfile
+  VOLUME /var/lib/postgresql/data
+Now build an Image with dockerfile using command 'docker build -t postgre:9.6 .'
+Now run the Image to create container docker using the command 'run --it --name my-postgres -e POSTGRES_PASSWORD=password -d postgres:9.6'
+To view the volume, we must first find its name. To do this we must use the docker inspect command
+docker inspect my-postgres
+output is
+[
+ {
+ "Destination": "/var/lib/postgresql/data",
+ "Driver": "local",
+ "Mode": "",
+ "Name": "fd223ffe7aa7c614fc393a42e14f5b64aa38a236351f18e3c4306fe5b8a8f5af",
+ "Propagation": "",
+ "RW": true,
+ "Source": "/var/lib/docker/volumes/fd223ffe7aa7c614fc393a42e14f5b64aa38a236351f18e3c4306fe5b8a8f5af/_data",
+ "Type": "volume"
+ }
+]
+Name attribute is the name/ID of the volume.
+The Destination refers to the folder location on the container which the volume is mapped to.
+Source shows the folder location on the hostmachine where the volume is mapped to.
+To view the volume we created type the following command
+docker volume ls | grep <volume-name
+To view the contents of the volume on the host machine, we must use the folder path defined in the  Source  attribut
+ls ls /var/lib/docker/volumes/fd223ffe7aa7c614fc393a42e14f5b64aa38a236351f18e3c4306fe5b8a8f5af/_data
+or
+
+creating a docker volume with "docker run" command:
+This allows us to create volumes with more meaningful names as the automatically generated name can be a bit cryptic.
+Before we create our new volume, let's delete the old postgres container along with its volume 
+docker rm -f -v my-postgres
+create our new postgres container with a brand new and meaningful volume name (postgres-data)
+docker run --name my-new-postgres -e POSTGRES_PASSWORD=password -v postgres-data:/var/lib/postgresql/data -d postgres:9.6
+We have created a volume called postgres-data, using -v postgres-data:/var/lib/postgresql/data
+To verify that the volume has been created type the following command 'docker volume ls | grep postgres-dat'
+if we execute the docker inspect , command we will see that the Source is now using the volume name as part of the folder path to the
+volume.
+docker inspect my-new-postgres 
+[
+ {
+ "Destination": "/var/lib/postgresql/data",
+ "Driver": "local",
+ "Mode": "z",
+ "Name": "postgres-data",
+ "Propagation": "",
+ "RW": true,
+ "Source": "/var/lib/docker/volumes/postgres-data/_data",
+ "Type": "volume"
+ }
+    
+    
+    
+Removing a Volume:
+Volumes can be removed by executing the docker volume rm <volume-name> command. However, the container that the volume is linked to
+must be stopped before the volume can be deleted. Also, keep in mind that if the volume is deleted all the data will be permanently lost.
+It is recommended that a backup of the volume be performed before deletion.    
+      
+Q.How to Back Up Your Data Volumes to Docker Hub?
+
+
+Docker Networking:
+Docker takes care of the networking aspects so that the containers can communicate with other containers and also with the Docker Host.
+Types of Networks
+1. bridge(default) - used to connect containers on a single host(machine), you check it via ping command 
+2. overlay         - it can connect the containers on a multiple machines. usually used in swarm mode
+                     it is a multihost container network.
+                     
+
+how to create network
+docker network create --driver=bridge javahomecloud(networkname)
+
+docker network ls
+networkID     networkName       driver   scope
+a09f7e6b2ac6  javahomecloud     bridge   local
+ddac4ff813b7  bridge            bridge   local
+389a7e7e8607  docker_gwbridge   bridge   local
+a09f7e6b2ac6  host              host     local
+ehw16ycy980s  ingress           overlay  swarm
+2b26c11d3469  none              null     local
+c740ydi1lm89  uber-net          overlay  swarm
+         
+attaching network while creating a container
+docker run --itd --name container1 --network javahomecloud ImageName:Tag  
+
+docker network inspect networkname - Inspecting a Docker network to see more details on the network associated with Docker
+what are the containers sits within this network.                     
 
 
 
