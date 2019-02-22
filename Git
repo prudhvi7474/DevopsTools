@@ -45,3 +45,6 @@ While doing development, each dev member should rebase the code from the release
 
 This approach works fine for projects where a team is working on a single release at a time. Most teams are working on multiple releases
 at a time, so they have to maintain more than one release branch active at a time
+
+1. clone the files
+2. if you wan tot do any modifications, it is always recommend to create a branch  then do it
