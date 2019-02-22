@@ -18,4 +18,8 @@ for me, there were only four servers.
     deploy a change, I won't have to worry about missing any steps like creating a folder or giving permissions to some files. I'll just
     need to run the script again.
     New tools has emerged like Terraform, Ansible, and Jenkins
-2.Buil d and Pack Your Application Only Once    
+2.Build and Pack Your Application Only Once 
+
+
+What Is Blue-Green Deployment?
+
