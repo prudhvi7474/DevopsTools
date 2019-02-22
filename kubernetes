@@ -34,6 +34,23 @@ Pod
 A Pod is the smallest deployable unit that can be created, scheduled, and managed. It’s a logical collection of containers that belong to
 an application.
 Group of containers into logical units
+How to create a Pod and how to launch containers inside a pod?
+vi file.yaml
+apiVersion: v1
+kind: Pod
+# labels attached to this Pod
+metadata:
+  name: couchbase-pod
+  labels:
+    name: couchbase-pod
+spec:
+  containers:
+  - name: couchbase
+    # Docker image that will run in this Pod
+    image: couchbase
+    ports:
+    - containerPort: 8091
+    
 
 What is Kubelet?
 This is an agent service which runs on each node and enables the slave to communicate with the master. So, Kubelet works on the description
