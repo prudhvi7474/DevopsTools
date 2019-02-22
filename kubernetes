@@ -1,6 +1,8 @@
 Kubernetes is an open source orchestration system for managing containerized applications across multiple hosts, providing basic mechanisms
 for the deployment, maintenance, and scaling of applications.
 
+Managing the containers @large scale across multiple hosts
+
 Kubernetes supports Docker and Rocket containers. 
 
 How is Kubernetes related to Docker?
