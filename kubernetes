@@ -14,9 +14,11 @@ Consider a scenario where you have 5-6 microservices for a single application pe
 in individual containers, but won’t be able to communicate without container orchestration like kubernetes or swarm.
 container orchestration means all the services in individual containers working together to fulfill the needs of a single server.
 
-
 application would have a cluster of containers running across multiple hosts, all these containers would need to talk to each other. So,
 to do this you need something big that would load balance, scale & monitor the containers. kubernetes is best choice among others.
+
+What is Minikube?
+Minikube is a tool that makes it easy to run Kubernetes locally. This runs a single-node Kubernetes cluster inside a virtual machine.
 
 ► What Is Kubernetes?
 ► Key Concepts of Kubernetes
@@ -33,10 +35,18 @@ A Pod is the smallest deployable unit that can be created, scheduled, and manage
 an application.
 Group of containers into logical units
 
+What is Kubelet?
+This is an agent service which runs on each node and enables the slave to communicate with the master. So, Kubelet works on the description
+of containers provided to it in the PodSpec and makes sure that the containers described in the PodSpec are healthy and running.
+
 
 Kubelet ensures that the containers defined in the Pods are started and continue running.
 Q.how to define a containers in pod?
 
+
+What is Kubectl?
+Kubectl is the platform using which you can pass commands to the cluster. So, it basically provides the CLI to run commands against
+the Kubernetes cluster with various ways to create and manage the Kubernetes component.
 Kubctl CLI
 kubectl is a command-line utility that controls the Kubernetes cluster. 
 some of the important Kubectl commands listed below
