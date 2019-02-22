@@ -35,7 +35,7 @@ A Pod is the smallest deployable unit that can be created, scheduled, and manage
 an application.
 Group of containers into logical units
 How to create a Pod and how to launch containers inside a pod?
-vi file.yaml
+vi deployment.yaml  // this file is to define our deployment
 apiVersion: v1
 kind: Pod
 # labels attached to this Pod
