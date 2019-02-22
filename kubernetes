@@ -1,6 +1,8 @@
 Kubernetes is an open source orchestration system for managing containerized applications across multiple hosts, providing basic mechanisms
 for the deployment, maintenance, and scaling of applications.
 
+An open-source orchestration system for managing containerized applications across multiple hosts.
+
 Managing the containers @large scale across multiple hosts
 
 Kubernetes supports Docker and Rocket containers. 
@@ -64,17 +66,16 @@ Kubectl is the platform using which you can pass commands to the cluster. So, it
 the Kubernetes cluster with various ways to create and manage the Kubernetes component.
 Kubctl CLI
 kubectl is a command-line utility that controls the Kubernetes cluster. 
-some of the important Kubectl commands listed below
-kubectl create -f couchbase-pod.yml   - Create a Couchbase pod
-kubectl create -f couchbase-rs.yml    - Create a Couchbase Replica Set
-kubectl delete -f couchbase-pod.yml   - Deletes/Removes the Couchbase pod
-kubectl get pods                      - List all the pods
-kubectl describe pod couchbase-pod    - Describe the Couchbase pod
-kubectl --help                        - Shows the complete list of available commands.
+
+kubectl create -f  pod.yml/replicaset.yml/deployment.yml/service.yml
+kubectl delete -f  podName/replicasetName/deploymentName/serviceName
+kubectl describe 
+kubectl get pods
+kubectl --help 
 
 kubectl [command] [type] [name] [flags]
 [command] - create, get, describe, delete, or scale.
-[type]    - specifies the Kubernetes resource type like pod, service,replica set, node
+[type]or kind  - specifies the Kubernetes resource type like pod, service,replica set, node
 [name]    - Specifies the name of the resource
 
 https://dzone.com/refcardz/kubernetes-essentials?chapter=1
