@@ -38,8 +38,6 @@ Group of containers into logical units
 What is Kubelet?
 This is an agent service which runs on each node and enables the slave to communicate with the master. So, Kubelet works on the description
 of containers provided to it in the PodSpec and makes sure that the containers described in the PodSpec are healthy and running.
-
-
 Kubelet ensures that the containers defined in the Pods are started and continue running.
 Q.how to define a containers in pod?
 
