@@ -64,19 +64,39 @@ at a time, so they have to maintain more than one release branch active at a tim
 Q. what is the difference between HEAD, working tree and index in Git?
 
 
-Q. when should i use git stash?
-
+Q.when should i use git stash?
+Git's Stash feature is used to save your local changes temporarily.  we can get back the changes where we left
+git stash
+git stash list
+git stash apply
+git stash pop
 Q.
 
 
 Q.how to revert previous commit in git?
 Q.how to remove a file from git without removing it from your file system?
+Suppose we have six commits, if you want to get back to 3th commit and we dont want to keep 4th,5th and 6th commits these are bad commits,
+that time we use Git reset.
+Git reset --mixed commitId
+Git reset --hard  commitId
+Git reset --soft  commitId
+
+Suppose we have six commits, if you want to get back to 3th commit and we dont want to delete 4th,5th and 6th commits, that time we use Git revert
+it will create extra 'revert commit' instead of deleting the commits.
+Git revert commitId
 
 
 
 Q.how do you use git rebase instead of git merge?
 
 
-Q.
+Q.What is the difference between "git pull" and "git fetch"?
+Git pull is used to download the latest changes from the remote repository which is not in our local copy and merge it target branch
+of our local repository automatically.
+git pull origin master
 
-
+Merge is used to integrate changes from one branch to another branch. For suppose we have a two branches called master and feature,
+we have to integrate the changes from release branch i to master branch, first we have to checkout from release branch to master branch
+and then merge the changes
+git checkout master
+git merge release
