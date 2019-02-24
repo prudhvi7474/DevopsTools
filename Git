@@ -7,13 +7,36 @@ release  - creating release branch from the master branch(production code)
 feature  - each developer creates a feature branch from release branch, and develop the new features in that branch
 hotfix   - creating hotfix branch from the master branch
 
-Let's say you are working on feature branch and you have to pull the latest changes form release branch. make sure any changes that were
-moved to the release branch are available in the local feature branch.This avoids the conflicts/duplicatecode while merging the feature
-branch to the release branch at feature completion time.
-Note:Everyone should take the latest updates from the release branch daily using the merge or rebase Git commands.
+step1: creating release branch from the master branch
+release branch is the branch to which all feature branches are merged and where all tests are performed. Only when everything’s been
+thoroughly checked and fixed it can be merged to the master.
+
+step2: creating feature branch from the master branch
+make sure any changes that were moved to the release branch are available in the local feature branch.This avoids the conflicts
+or duplicate code while merging the feature branch to the release branch at feature completion time.
+note: should take the latest updates from the release branch daily using the merge or rebase Git commands.
 git checkout -b feature1
 git merge release1
 
+step2:
+After completion of feature, raise a pull request to merge the code to the release branch.This step can be done in the GitHub UI.
+A code review will be performed on the pull request and changes will be done if needed. If everything is fine, the pull request 
+will be approved by the reviewer.
+
+step3:
+Create a tag from the release branch to the testing team for validation of the feature. 
+git tag -a release1_tag1 -m "release1 tag1"
+Once testing is complete, a software production release will be done from the final QA approved tag.
+
+
+
+Let's say you are working on feature branch and you have to pull the latest changes form release branch. make sure any changes that were
+moved to the release branch are available in the local feature branch.This avoids the conflicts/duplicatecode while merging the feature
+branch to the release branch at feature completion time.
+Note:Everyonecheckout -b feature1
+git merge release1
+ should take the latest updates from the release branch daily using the merge or rebase Git commands.
+git 
 On completion of a feature, raise a pull request to merge the code to the release branch. This step can be done in the GitHub UI.
 
 A code review will be performed on the pull request and changes will be done if needed. If everything is fine, the pull request will be
