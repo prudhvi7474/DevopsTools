@@ -28,49 +28,33 @@ Create a tag from the release branch to the testing team for validation of the f
 git tag -a release1_tag1 -m "release1 tag1"
 Once testing is complete, a software production release will be done from the final QA approved tag.
 
-
-
-Let's say you are working on feature branch and you have to pull the latest changes form release branch. make sure any changes that were
-moved to the release branch are available in the local feature branch.This avoids the conflicts/duplicatecode while merging the feature
-branch to the release branch at feature completion time.
-Note:Everyonecheckout -b feature1
-git merge release1
- should take the latest updates from the release branch daily using the merge or rebase Git commands.
-git 
-On completion of a feature, raise a pull request to merge the code to the release branch. This step can be done in the GitHub UI.
-
-A code review will be performed on the pull request and changes will be done if needed. If everything is fine, the pull request will be
-approved by the reviewer.
-
-
-Create a tag from the release branch to the testing team for validation of the feature. We have to provide a tag to the testing team
-upon completion related features to be tested   
-git tag -a release1_tag1 -m "release1 tag1"
-
-Upon completion of all features planned in the release, the final tag can be provided to the testing team for validation.Once testing is
-complete, a software production release will be done from the final QA approved tag.
-
+step4:
 After the production release, merge the release branch code to the master so that the master has the production code.
-
 Next, delete the feature branch upon completion of the feature and delete the release branch upon completion of the release.
 git branch -d feature1
 git branch -d release1
 
-Any post-production release fix can be done in a tag. Remember to move the code to the master and post any production fix release.
+step5:
+Maintenance or hotfix branches are used to quickly patch production releases. Any post-production release fix can be done in a tag.
+created from the master branch.
 git checkout -b  release1_prodfixticketNumber release_tag1 (Hotfix branch)
 This command creates a new branch, “release1_prodfixticketNumber,” from the production release tag “release1_tag1
-Maintenance or “hotfix” branches are used to quickly patch production releases.and created from the master branch. 
 
 Create the next release branch from the master, as the master has the production code, and follow the same approach for development
-as described above.
+as described above
 
+summary:
 In this approach, the master branch has the production code and releases are done from a tag. Each dev member can cut a branch from the
 release branch, work on a feature independently, and upon completion of the feature, can raise a merge pull request and get it approved.
 While doing development, each dev member should rebase the code from the release branch so that they have the latest code.
 
-
 This approach works fine for projects where a team is working on a single release at a time. Most teams are working on multiple releases
-at a time, so they have to maintain more than one release branch active at a time
+at a time, so they have to maintain more than one release branch active at a time.
+
+
+
+
+
 
 1. clone the files
 2. if you wan tot do any modifications, it is always recommend to create a branch  then do it
