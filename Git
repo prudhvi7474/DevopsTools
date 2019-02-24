@@ -5,6 +5,7 @@ Git branching strategy:
 master   - production code branch
 release1 - creating release branch from the master branch(production code)
 feature1 - each developer creates a feature branch from release branch, and develop the new features in that branch
+hotfix   - 
 
 Let's say you are working on feature branch and you have to pull the latest changes form release branch. make sure any changes that were
 moved to the release branch are available in the local feature branch.This avoids the conflicts/duplicatecode while merging the feature
