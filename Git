@@ -3,9 +3,9 @@ Git is a version control system for tracking changes in files and coordinating w
 Git branching strategy:
 -----------------------
 master   - production code branch
-release1 - creating release branch from the master branch(production code)
-feature1 - each developer creates a feature branch from release branch, and develop the new features in that branch
-hotfix   - 
+release  - creating release branch from the master branch(production code)
+feature  - each developer creates a feature branch from release branch, and develop the new features in that branch
+hotfix   - creating hotfix branch from the master branch
 
 Let's say you are working on feature branch and you have to pull the latest changes form release branch. make sure any changes that were
 moved to the release branch are available in the local feature branch.This avoids the conflicts/duplicatecode while merging the feature
@@ -35,7 +35,8 @@ git branch -d release1
 
 Any post-production release fix can be done in a tag. Remember to move the code to the master and post any production fix release.
 git checkout -b  release1_prodfixticketNumber release_tag1 (Hotfix branch)
-This command creates a new branch, “release1_prodfixticketNumber,” from the production release tag “release1_tag1.
+This command creates a new branch, “release1_prodfixticketNumber,” from the production release tag “release1_tag1
+Maintenance or “hotfix” branches are used to quickly patch production releases.and created from the master branch. 
 
 Create the next release branch from the master, as the master has the production code, and follow the same approach for development
 as described above.
