@@ -18,8 +18,9 @@ On completion of a feature, raise a pull request to merge the code to the releas
 A code review will be performed on the pull request and changes will be done if needed. If everything is fine, the pull request will be
 approved by the reviewer.
 
-Create a tag from the release branch to the testing team for validation of the feature. We have to provide a tag to the testing team upon
-completion related features to be tested
+
+Create a tag from the release branch to the testing team for validation of the feature. We have to provide a tag to the testing team
+upon completion related features to be tested   (Hotfix branch)
 git tag -a release1_tag1 -m "release1 tag1"
 
 Upon completion of all features planned in the release, the final tag can be provided to the testing team for validation.Once testing is
