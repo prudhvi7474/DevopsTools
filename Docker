@@ -16,6 +16,10 @@ to the application from dev to production, easying the code deployment.
 
 containers utilizes minimal system resources like CPU, RAM etc... from HostOS(DockerHost), so that containers are light weight.
 
+Each application will run on a separate container and will have its own set of libraries and dependencies. This also ensures that
+there is process level isolation, meaning each application is independent of other applications, giving developers assurance that they
+can build applications that will not interfere with one another.
+
 Our's is a springboot application, we are going deploy our application in to docker containers for high avaialability and zero downtime.
 Docker deployment in a production environment was relatively simple and trouble-free.
 
@@ -24,9 +28,7 @@ via Docker Hub.
 
 Big companies like Google, VMware and Microsoft are using Docker to their Infrastructure.
 
-Each application will run on a separate container and will have its own set of libraries and dependencies. This also ensures that
-there is process level isolation, meaning each application is independent of other applications, giving developers assurance that they
-can build applications that will not interfere with one another.
+
 
 Managing the containers @large scale - docker swarm or kubernetes.
 managing means like loadbalancing, autoscaling and monitoring
@@ -126,8 +128,6 @@ docker inspect my-new-postgres
  "Source": "/var/lib/docker/volumes/postgres-data/_data",
  "Type": "volume"
  }
-    
-    
     
 Removing a Volume:
 Volumes can be removed by executing the docker volume rm <volume-name> command. However, the container that the volume is linked to
