@@ -28,14 +28,27 @@ via Docker Hub.
 
 Big companies like Google, VMware and Microsoft are using Docker to their Infrastructure.
 
-
-
-Managing the containers @large scale - docker swarm or kubernetes.
-managing means like loadbalancing, autoscaling and monitoring
-
 Basic things to remember:
 1. Create the Dockerfile,which contains all the commands to package the application(.war) with all the  dependency Libraries as an Image
    vi Dockerfile
+   FROM ubuntu:16.04
+   WORKDIR /tmp      // if you download any code, it goes in to working directory
+   RUN apt-get update -y
+   RUN apt-get install httpd -y
+   RUN apt-get install wget -y
+   
+   RUN wget http://github.com/sudhansh123/javahome-app/archive/master.zip
+   RUN unzip javahome-app-master.zip
+   RUN mv -r javahome-app-master/* /var/www/html 
+   //we are moving all the files in this 'javahome-app-master' directory to /var/www/html
+   EXPOSE 80
+   CMD command instruction is executed at run time
+   can we use multiple command instructions at Dockerfile?
+   yes, but it will pick the latest one.
+   ENTRYPOINT
+   
+   
+   
    
 2. build the docker Image with the help of Dockerfile.
    docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
@@ -50,6 +63,20 @@ Basic things to remember:
       docker exec -it ContainerId /bin/bash
 7. how to inspect the container
       docker inspect containerId
+
+
+
+
+
+
+
+
+
+
+Managing the containers @large scale - docker swarm or kubernetes.
+managing means like loadbalancing, autoscaling and monitoring
+
+
       
 
 create an image from the updatedcontainer   or How to update/add a file in the Docker Image
