@@ -36,7 +36,6 @@ Basic things to remember:
    RUN apt-get update -y
    RUN apt-get install httpd -y
    RUN apt-get install wget -y
-   
    RUN wget http://github.com/sudhansh123/javahome-app/archive/master.zip
    RUN unzip javahome-app-master.zip
    RUN mv -r javahome-app-master/* /var/www/html 
@@ -46,10 +45,6 @@ Basic things to remember:
    can we use multiple command instructions at Dockerfile?
    yes, but it will pick the latest one.
    ENTRYPOINT
-   
-   
-   
-   
 2. build the docker Image with the help of Dockerfile.
    docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
       docker build -t ImageName:Tag .
