@@ -61,6 +61,63 @@ Basic things to remember:
 
 
 
+docker-compose
+Docker Compose is a tool for defining and running 'multi-container' Docker applications.you can define all your services
+in single yaml file.
+or
+With docker-compose, you can define a multi-container application in a single yaml file
+
+multi container docker application can have multiple services like
+application
+database
+cache server(redis)
+etc.....
+
+
+Version         - version of docker-compose syntax
+services        - Services are different pieces of our application i.e (app, redis, mysql).
+build           - This directive can be used instead of image. specifies the location of the Dockerfile that will be used to build an image.
+image           - used to specify a prebuilt image to create the container.
+container_name  - used to specify the name of the container after build an image.
+restart	        - tells the container to restart, if the system restarts.
+environment     - this is used to pass environment variables to containers.
+                  Define environment variables to be passed in to the Docker run command.
+Ports           - used to map container's port to host's port. In app service, we mapped port 8080 on the host machine to port 80 in the
+                  container.Maps a port from the container to the host in the following manner: host:container
+expose          -                  
+volumes         - Mounts a linked path on the host machine that can be used by the container
+depends_on      - this ensures that mysql and redis are started before app service.so that other containers can use this container.
+links           - Link this service to any other services in the Docker Compose file by specifying their names here.
+networks        - 
+
+vi docker-compose.yml
+version: '3.3'
+services:
+  app:
+    image: sample:1.0
+    container_name: sample_app
+    build: .
+    ports: 
+      - 80:3000
+    environment:
+      - MONGO_URI=mongodb://sampledb/sample
+    depends_on: 
+      - db
+    networks: 
+      - samplenet
+  db:
+    image: mongo:3.0.15
+    container_name: sample_db
+    volumes:
+      - ./db:/data/db
+    networks:
+      samplenet:
+        aliases:
+          - "sampledb"
+networks:
+  samplenet:
+    driver: bridge
+
 
 
 
