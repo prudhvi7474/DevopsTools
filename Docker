@@ -234,6 +234,8 @@ Types of Networks
 
 how to create network
 docker network create --driver=bridge javahomecloud(networkname)
+to check list of networks
+docker network ls
 
 docker network ls
 networkID     networkName       driver   scope
@@ -249,7 +251,34 @@ attaching network while creating a container
 docker run --itd --name container1 --network javahomecloud ImageName:Tag  
 
 docker network inspect networkname - Inspecting a Docker network to see more details on the network associated with Docker
-what are the containers sits within this network.                     
+what are the containers sits within this network. 
+
+
+
+Docker swarm for container-orchestration:
+Q.why docker swarm  or why container orchestration?
+consider a scenarion, where an application would have 5-6 microservices for a single application performing various tasks.these
+microservices are put in seperate individual containers across multiple hosts, all these containers would need to talk to each other.
+So you need something big like Docker Swarm (or) Kubernetes, that would load balance, scale & monitor the containers.
+or
+application would have a cluster of containers running across multiple hosts.containers running on multiple hosts can be manually
+linked and orchestrated using Kubernetes like swarm
+
+
+
+manager node - scheduling the containers across different worker nodes
+worker nodes -
+
+
+1.docker service create <--name --replicas --publish --network> ImageName:Tag
+  --replicas flag is used specify that this service should run on 2 different nodes
+2.docker service ls
+  o/p: Id  Name  Replicas Image
+3.docker node ls
+  o/p: Id  HostName  Status  Avaialability  ManagerStatus 
+3.docker service ps serviceName
+  o/p: Id  Name  Image    Node
+  
 
 
 
