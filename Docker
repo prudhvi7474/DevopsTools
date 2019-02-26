@@ -126,7 +126,7 @@ networks:
   samplenet:
     driver: bridge
 
-
+Using Docker-Compose in Development
 
 
 
@@ -253,7 +253,10 @@ Types of Networks
 
 
 
-Docker swarm for container-orchestration:
+Docker Swarm Cluster:
+manager node - scheduling the containers across different worker nodes
+worker nodes -
+
 Q.why docker swarm  or why container orchestration?
 consider a scenarion, where an application would have 5-6 microservices for a single application performing various tasks.these
 microservices are put in seperate individual containers across multiple hosts, all these containers would need to talk to each other.
@@ -264,8 +267,7 @@ linked and orchestrated using Kubernetes like swarm
 
 
 
-manager node - scheduling the containers across different worker nodes
-worker nodes -
+
 
 
 1.docker service create <--name --replicas --publish --network> ImageName:Tag
@@ -277,7 +279,9 @@ worker nodes -
 3.docker service ps serviceName
   o/p: Id  Name  Image    Node
 4.docker service inspect serviceNme  
-5.docker service scale serviceName=3   // for autoscaling
+5.docker service scale serviceName=replicas   // Scaling Services (for autoscaling)
+  This command will scale the vote service to 3 containers, up from 2. Because Docker Swarm uses an overlay network, it is able to
+  run multiple containers of the same service on the same node.
 
 
 Rolling Update:
@@ -291,6 +295,18 @@ overall progress: 3 out of 3 tasks
 2/3: running [==================================================>]
 3/3: running [==================================================>]
 verify: Service converged
+
+
+
+MySQL Service
+docker service create --name mysqldb1 --network net1 -p 3340:3306 --mount type=volume,source=mysqldata,target=/var/lib/mysql,readonly=false --env MYSQL_ROOT_PASSWORD=root --env MYSQL_USER=root mysql:latest
+Rabbit Service
+docker service create --name rabbit --network net1 --env --env   rabbitmq:3-management
+
+
+Q.difference between docker-compose and docker swarm?
+
+
   
 
 
