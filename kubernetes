@@ -9,17 +9,15 @@ Managing the containers @large scale across multiple hosts
 
 Kubernetes supports Docker and Rocket containers. 
 
-How is Kubernetes related to Docker?
-Docker builds the containers and these containers communicate with each other via Kubernetes. So, containers running on multiple hosts
-can be manually linked and orchestrated using Kubernetes like swarm
+Q.why docker Kubernetes  or why container orchestration?
+consider a scenarion, where an application would have 5-6 microservices for a single application performing various tasks.these
+microservices are put in seperate individual containers across multiple hosts, all these containers would need to talk to each other.
+So you need something big like Docker Swarm (or) Kubernetes, that would load balance, scale & monitor the containers.
+or
+application would have a cluster of containers running across multiple hosts.containers running on multiple hosts can be manually
+linked and orchestrated using Kubernetes like swarm
 
-What is Container Orchestration?
-Consider a scenario where you have 5-6 microservices for a single application performing various tasks. Now, these microservices are put 
-in individual containers, but won’t be able to communicate without container orchestration like kubernetes or swarm.
-container orchestration means all the services in individual containers working together to fulfill the needs of a single server.
 
-application would have a cluster of containers running across multiple hosts, all these containers would need to talk to each other. So,
-to do this you need something big that would load balance, scale & monitor the containers. kubernetes is best choice among others.
 
 
 ► What Is Kubernetes?
