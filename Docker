@@ -45,6 +45,7 @@ Basic things to remember:
    can we use multiple command instructions at Dockerfile?
    yes, but it will pick the latest one.
    ENTRYPOINT
+   difference between CMD, RUN and ENTRYPOINT?
 2. build the docker Image with the help of Dockerfile.
    docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
       docker build -t ImageName:Tag .
@@ -89,6 +90,7 @@ volumes         - Mounts a linked path on the host machine that can be used by t
 depends_on      - this ensures that mysql and redis are started before app service.so that other containers can use this container.
 links           - Link this service to any other services in the Docker Compose file by specifying their names here.
 networks        - 
+Label           - 
 
 vi docker-compose.yml
 version: '3.3'
