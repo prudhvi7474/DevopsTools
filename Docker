@@ -269,7 +269,7 @@ worker nodes -
 
 
 1.docker service create <--name --replicas --publish --network> ImageName:Tag
-  --replicas flag is used specify that this service should run on 2 different nodes
+  --replicas flag is used to specify that this service should run on 2 different nodes
 2.docker service ls
   o/p: Id  Name  Replicas Image
 3.docker node ls
@@ -277,6 +277,20 @@ worker nodes -
 3.docker service ps serviceName
   o/p: Id  Name  Image    Node
 4.docker service inspect serviceNme  
+5.docker service scale serviceName=3   // for autoscaling
+
+
+Rolling Update:
+The last thing I want to demonstrate is a rolling update of the service by making a minor change on the index.html file. Then I need to
+rebuild my Docker image and push it to my public DockerHub repository.Once I've got my new image available in the remote repository,
+I run the following command on the swarm manager node.
+docker service update --image mengxuzhao/myapache:latest serviceName
+output:
+overall progress: 3 out of 3 tasks
+1/3: running [==================================================>]
+2/3: running [==================================================>]
+3/3: running [==================================================>]
+verify: Service converged
   
 
 
