@@ -41,11 +41,17 @@ Basic things to remember:
    RUN mv -r javahome-app-master/* /var/www/html 
    //we are moving all the files in this 'javahome-app-master' directory to /var/www/html
    EXPOSE 80
-   CMD command instruction is executed at run time
-   can we use multiple command instructions at Dockerfile?
-   yes, but it will pick the latest one.
-   ENTRYPOINT
-   difference between CMD, RUN and ENTRYPOINT?
+   CMD 'service httpd start'
+   ENTRYPOINT[java -jar app.jar]
+   
+Q. difference between CMD, RUN and ENTRYPOINT?
+   both CMD and ENTRYPOINT instructions are executed at run time. i.e when container started
+   In case of CMD instruction we can override it
+   In case of ENTRYPOINT instruction we cant override it but we can append a command passed at run time. command is a default arguement for ENTRYPOINT
+   RUN instruction will get executed before container started i.e at the time of creating image.
+Q  can we use multiple command instructions at Dockerfile?
+   yes, but it will pick the latest one. 
+   
 2. build the docker Image with the help of Dockerfile.
    docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
       docker build -t ImageName:Tag .
