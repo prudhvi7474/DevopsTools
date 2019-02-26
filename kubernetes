@@ -57,7 +57,8 @@ spec:
     image: couchbase
     ports:
     - containerPort: 8091
-    
+   
+Labels: key-value tags (e.g. "Name") that you and the system use to identify pods, replication controllers, and services   
 
 What is Kubelet?
 This is an agent service which runs on each node and enables the slave to communicate with the master. So, Kubelet works on the description
