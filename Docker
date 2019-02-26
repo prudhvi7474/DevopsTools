@@ -148,8 +148,8 @@ Q.What are Volumes, and Why Do We Need Them?
   Volumes are external storage areas used to store data produced by a Docker container. Volumes can be located on the docker host or 
   even on remote machines.
                 When a container dies all the data it has created (logs, database records, etc...) dies with it. So how do we ensure
-  that data produced by containers is stored? Volumes are the answer to this question. Volumes are used to store the data generated
-  by a container so even when its gone the data it produces still lives on. 
+  that data produced by containers is stored? Volumes are the answer to this question. 'Volumes are used to store the data generated
+  by a container so even when its gone the data it produces still lives on'. 
   
 Q.Volume Types?
 here are two main types of volumes, data volumes and bind mounts. 
@@ -180,8 +180,8 @@ Name attribute is the name/ID of the volume.
 The Destination refers to the folder location on the container which the volume is mapped to.
 Source shows the folder location on the hostmachine where the volume is mapped to.
 To view the volume we created type the following command
-docker volume ls | grep <volume-name
-To view the contents of the volume on the host machine, we must use the folder path defined in the  Source  attribut
+docker volume ls | grep <volume-name>
+To view the contents of the volume on the host machine, we must use the folder path defined in the  Source  attribute
 ls ls /var/lib/docker/volumes/fd223ffe7aa7c614fc393a42e14f5b64aa38a236351f18e3c4306fe5b8a8f5af/_data
 or
 
