@@ -9,6 +9,108 @@ Managing the containers @large scale across multiple hosts
 
 Kubernetes supports Docker and Rocket containers. 
 
+kubernetes - Production-Grade Container Orchestration
+
+Kubernetes (k8s) is an open-source system for automating deployment, scaling, and management of containerized applications.
+It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon 
+15 years of experience of running production workloads at Google.
+Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.
+
+Kubernetes Features:
+1.Service discovery and load balancing
+  No need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives containers their own
+  IP addresses and a single DNS name for a set of containers, and can load-balance across them.
+2.Automated rollouts and rollbacks
+  Kubernetes progressively rolls out changes to your application, If something goes wrong, Kubernetes will rollback the change
+  for you. Take advantage of a growing ecosystem of deployment solutions.
+3.Self-healing
+  Restarts containers that fail, replaces and reschedules containers when nodes die, kills containers that don’t respond to your
+  user-defined health check, and doesn’t advertise them to clients until they are ready to serve.
+4.Horizontal scaling
+  Scale your application up and down with a simple command, with a UI, or automatically based on CPU usage.
+5.Storage orchestration
+  Automatically mount the storage system of your choice, whether from local storage, a public cloud provider such as GCP or AWS,
+  or a network storage system such as NFS, iSCSI, Gluster, Ceph, Cinder, or Flocker
+  
+  
+Deploy a containerized application on a cluster(kubernetes)
+Scale the deployment
+Update the containerized application with a new software version
+Debug the containerized application
+
+
+Kubernetes coordinates a highly available cluster of computers/machines that are connected to work as a single unit.
+Kubernetes automates the distribution and scheduling of application containers across a cluster in a more efficient way.
+A Kubernetes cluster consists of two types of resources:
+1.The Master coordinates the cluster
+  The Master is responsible for managing the cluster. The master coordinates all activities in your cluster, such as 
+  scheduling applications, maintaining applications' desired state, scaling applications, and rolling out new updates.
+2.nodes are the workers that run applications
+  A node is a VM or a physical computer that serves as a worker machine in a Kubernetes cluster. Each node has a Kubelet,
+  which is an agent for managing the node and communicating with the Kubernetes master.
+  A Kubernetes cluster that handles production traffic should have a minimum of three nodes.
+  
+  When you deploy applications on Kubernetes, you tell the master to start the application containers. The master schedules
+  the containers to run on the cluster's nodes. The nodes communicate with the master using the Kubernetes API, which the master exposes.
+  End users can also use the Kubernetes API directly to interact with the cluster.  
+  
+  A Kubernetes cluster can be deployed on either physical or virtual machines.
+  
+  To get started with Kubernetes development, you can use Minikube. Minikube is a lightweight Kubernetes implementation 
+  that creates a VM on your local machine and deploys a simple cluster containing only one node.
+  Minikube is available for Linux, macOS, and Windows systems. The Minikube CLI provides basic bootstrapping operations
+  for working with your cluster, including start, stop, status, and delete.
+  
+Kubernetes Deployments:
+step1:
+Once you setup a Kubernetes cluster, you can deploy your containerized applications on top of it.
+step2:
+To do so, you can create a Kubernetes Deployment configuration. which instructs Kubernetes how to create and update 
+instances/containers of your application.Once you've created a Deployment, the Kubernetes master schedules mentioned application
+instances/containers onto individual Nodes in the cluster.
+creating a deployment file called controllers/nginx-deployment.yaml
+vi controllers/nginx-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+In the above example,
+1.A Deployment named nginx-deployment is created, indicated by the .metadata.name field.
+2.The Deployment creates three replicated Pods, indicated by the replicas field.
+3.The selector field defines how the Deployment finds which Pods to manage. In this case, you simply select a label
+  that is defined in the Pod template (app: nginx). However, more sophisticated selection rules are possible, as long as
+  the Pod template itself satisfies the rule.
+4.
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+
+        
+        
+        
+
+
+
+
+
+
+
 Q.why docker Kubernetes  or why container orchestration?
 consider a scenarion, where an application would have 5-6 microservices for a single application performing various tasks.these
 microservices are put in seperate individual containers across multiple hosts, all these containers would need to talk to each other.
