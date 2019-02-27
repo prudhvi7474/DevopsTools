@@ -98,6 +98,8 @@ In the above example,
   that is defined in the Pod template (app: nginx). However, more sophisticated selection rules are possible, as long as
   the Pod template itself satisfies the rule.
 4.
+https://kubernetes.io/docs/concepts/workloads/pods/pod/
+https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 
