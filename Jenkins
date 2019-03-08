@@ -27,13 +27,51 @@ configurations upto your entire automation jobs.
 
 
 how you do build automation? how you trigger the build, is it CI or it is manual(click on build now)?
-by using cron expression
-every 6 hours 
+by using cron expression for every 6 hours 
 
 
-CI/CD Pipeline
-chaining the jobs
-jenkins pipeline script
+
+CI/CD Pipeline in Jenkins
+1.chaining the jobs or upstream and downstream jobs
+2.jenkins pipeline script
+
+
+deploying War file from build server to a docker container(tomcat) using Ansible
+Developers checkin their changes to Git, Jenkins pulls the code then build it, whatever build artifacts has generated give it
+to the Ansible, ansible is going to deploy it into the tomcat server.
+implementation:
+1.Jenkins server/build server
+2.Ansible server
+3.Tomcat Server
+step1:
+Publish over ssh plugin - Send files(SCP) over SSH to a remote server i.e Ansible server
+                          and Execute commands on a remote server
+                          Manage Jenkins - Configure System - publish over ssh - ssh servers
+                          Hostname: Ansible serverIP
+                          username: ansadm
+                          password: ******
+step2:
+Establish ssh connection(password less authentication) b/n Ansible server and Tomcat server. create a playbook copywarfile.yml
+under /opt/playbooks location in Ansible server
+# copywarfile.yml
+  ---
+  - hosts: all 
+    become: true
+    tasks: 
+     - name: copy jar/war onto tomcat servers
+        copy:
+          src: /op/playbooks/wabapp/target/webapp.war
+          dest: /opt/apache-tomcat-8.5.32/webapps
+          
+step3:
+In Jenkins server, Go to post build actions - send files or execute commands over SSH
+ssh server Name  - target machine(ansible serverIP)
+source file      - war file location  i.e Webapplication/target/*.war
+Remote directory - //opt//playbooks (where do you want to copy on target machine)
+Again, Go to post build actions - send files or execute commands over SSH
+ssh server Name  - target machine(ansible serverIP)
+Execute command  - ansible-playbook /opt/playbooks/copywarfile.yml  (we are going to execute this command on ansible server)  
+Execute job and you should be able to seen build has been deployed on Tomcat server.
 
 
 
