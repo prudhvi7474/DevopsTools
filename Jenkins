@@ -25,6 +25,10 @@ Consider the 'Jenkins home directory' as a database. It’s very important to ta
 configurations upto your entire automation jobs.
 /var/lib/jenkins
 
+how to increase Jenkins Heap space?
+
+
+
 
 how you do build automation? how you trigger the build, is it CI or it is manual(click on build now)?
 by using cron expression for every 6 hours 
