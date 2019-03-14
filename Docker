@@ -7,7 +7,8 @@ The Application code what we have developed and along with all the dependencies 
 an image(basically we are writing docker file) and push it to the Docker registry. So that we can pull the image and run it in any
 environments using light weight isolated containers without any portability and compatibility issues. and then check whether API is 
 opening or not.
-docker build -t ImageName:Tag .
+//docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
+docker build -t ImageName:Tag .  
 docker run --itd --name containerName -p 8080(dockerhost):80(container) ImageName:tag
 
                              As the code travels from Developer's machine to production, there are many different environments it has to
@@ -52,31 +53,39 @@ Q. difference between CMD, RUN and ENTRYPOINT?
 Q  can we use multiple command instructions at Dockerfile?
    yes, but it will pick the latest one. 
    
-2. build the docker Image with the help of Dockerfile.
-   docker Image contain an application(.war/jar) and all the dependent Libraries required to run the application.
-      docker build -t ImageName:Tag .
-3. push the Image to Dockerregistry
-      docker Push ImageName:Tag
-4. Pull the Image from the DockerHub   
-      docker pull ImageNmae:Tag
-5. run the image, in order to deploy the container
-      docker run --itd --name containerName -p 8080(dockerhost):80(container) ImageName:tag
-6. to log in to the container or to get in to the container
-      docker exec -it ContainerId /bin/bash
-7. how to inspect the container
-      docker inspect containerId
+
+   
+docker build -t ImageName:Tag .
+docker login
+docker Push ImageName:Tag
+docker pull ImageNmae:Tag
+docker run --itd --name containerName -p 8080(dockerhost):80(container) ImageName:tag
+docker exec -it ContainerId /bin/bash
+docker inspect containerId
 
 
 
 docker-compose
-Docker Compose is a tool for defining and running 'multi-container' Docker applications.you can define all your services
-in single yaml file.
-or
-With docker-compose, you can define a multi-container application in a single yaml file
+It is used to run multi container applications.We can split our app in to multiple services and we can put/define all our services
+in to single yaml file. so that we can start our services with single command.
+where we can specify/define different options like
+build where we can specify dockerfile path to build an image and
+Image where we can specify ImageName to create container and
+container_name and
+ports for port mapping and
+environment variables and
+volumes and
+Networks
+depends_on
+links
+deploy
+config
 
-multi container docker application can have multiple services like
-application
-database
+
+For this our's is a SPRINGBOOT multi container docker application can have multiple services like
+application service
+webservice
+database service
 cache server(redis)
 etc.....
 
@@ -306,6 +315,25 @@ docker service create --name rabbit --network net1 --env --env   rabbitmq:3-mana
 
 Q.difference between docker-compose and docker swarm?
 
+
+docker system prune  // docker system prune, which will clean up containers, images, volumes, and networks all in one command
+                     // To Remove unused data
+WARNING! This will remove:
+        - all stopped containers
+        - all networks not used by at least one container
+        - all dangling images
+        - all build cache
+Total reclaimed space: 1.84kB
+
+
+docker cp
+docker commit
+docker logs
+docker update
+docker top
+
+
+        
 
   
 
