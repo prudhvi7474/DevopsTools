@@ -40,5 +40,7 @@ for me, there were only four servers.
 
 
 
-what is horizental scaling and vertical scaling
+Q.what is horizental scaling and vertical scaling?
+A.Horizontal scaling means that you scale by adding more machines(like autoscaling) into your pool of resources whereas 
+  Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.
 
