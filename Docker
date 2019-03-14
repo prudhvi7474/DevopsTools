@@ -2,7 +2,8 @@ basically to deploy an application we have 3 different environments
 1. physical server
 2. Virtual machine
 3. container
-    
+   
+our's is a SpingBoot Application   
 The Application code what we have developed and along with all the dependencies required to run taht application, we can create it as 
 an image(basically we are writing docker file) and push it to the Docker registry. So that we can pull the image and run it in any
 environments using light weight isolated containers without any portability and compatibility issues. and then check whether API is 
@@ -67,7 +68,7 @@ docker inspect containerId
 
 docker-compose
 It is used to run multi container applications.We can split our app in to multiple services and we can put/define all our services
-in to single yaml file. so that we can start our services with single command.
+in to single yaml file. so that we can start all our services with single command.
 where we can specify/define different options like
 build where we can specify dockerfile path to build an image and
 Image where we can specify ImageName to create container and
