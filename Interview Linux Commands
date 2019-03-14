@@ -1,0 +1,2 @@
+Q.How to delete log files which are older than x Days 
+A.find LogfailsDirectoryPath -mtime +7 -exec rm {} \;
