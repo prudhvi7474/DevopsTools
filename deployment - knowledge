@@ -7,10 +7,22 @@ updated version of the application and restart the server.
 4.deploying the new version of your app
 5.restarting the server
 
-Zero Down-Time or less down-time with 15min or Minimize the downtime as much as possible.
+During a deployment process, your service is responsive the whole time, means that no requests are dropped at any point during the
+deployment process i.e Zero Down-Time or less down-time with 15min or Minimize the downtime as much as possible.
+Q.What Is Blue-Green Deployment?
+A.1.Blue-green deployment is an important technique to minimise/reduce the service downtime when deploying codebase changes to production
+    by running two identical production environments called Blue and Green.
+  2.With this technique, a software will be deployed to two different production environments with identical configurations
+    called blue and green
+  3.lets assume the active environment is blue and the idle environment is green.   
+  4.At any time, only one of them will be alive and serving requests in production while the other is idle and used as failover.
+  4.when you whish to release new version of the software,you can deploy it to the idle green environment first. once the software
+    is ensured to be working properly in green, you can switch your routing to point to green instead of blue.
+    This act of host-swapping environments after deployment can cause much shorter downtime as compared to simply deploying new version
+    to a shared single environment
+ 
 
-during a deployment process, your service is responsive the whole time, means that no requests are dropped at any point during the
-deployment process.
+
 
 realtime issues:
 Q. Who hasn't had issues when deploying a software change to production? No one right?
@@ -26,7 +38,7 @@ for me, there were only four servers.
 2.Build and Pack Your Application Only Once 
 
 
-What Is Blue-Green Deployment?
+
 
 what is horizental scaling and vertical scaling
 
