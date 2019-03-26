@@ -1,2 +1,17 @@
+Shell Scripting Interview Questions:
+1. Write scripts for monitoring, log processing, metrics collection and data visualization.
 Q.How to delete log files which are older than x Days 
 A.find LogfailsDirectoryPath -mtime +7 -exec rm {} \;
+
+
+Jenkins Interview Questions:
+1. what is Continuous Integration, Continuous Delivery and Continuous Deployment?
+2. How do you Implementing CI/CD pipeline throgh jenkins
+      1.via build pipeline(upstream and downstream jobs)
+      2.via pipeline script
+3. How do you Implement automated build in Jenkins
+4. How do you Implement automated deployment
+5. master/slave architecture
+6. parameterized builds
+7.
+
