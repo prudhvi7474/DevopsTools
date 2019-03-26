@@ -1,14 +1,34 @@
-Whenever we go for a deployment process, we shutdown the server, remove all active connections, drain out the older version and move the
-updated version of the application and restart the server.
+basically to deploy an application we have 3 different environments
+1. physical server
+2. Virtual machine
+3. container
 
+Generic steps steps to deploy an application:
+Whenever we go for a deployment process, we shutdown the server, remove all active connections, drain out the older version
+and move the updated version of the application and restart the server.
 1.shutting down your tomcat server
 2.cleaning any deployment directories i.e removing old artifacts
 3.defining a rollback point
 4.deploying the new version of your app
 5.restarting the server
 
+
+
+Lets discuss four major deployment types:
 During a deployment process, your service is responsive the whole time, means that no requests are dropped at any point during the
 deployment process i.e Zero Down-Time or less down-time with 15min or Minimize the downtime as much as possible.
+https://dzone.com/articles/docker-amp-continuous-delivery-deployment-types
+1.Minimum In-Service deployment
+       If we have 5 containers each running our current application A, then we set our policy to keep a minimum in-service number of 2.
+       We take 3 servers offline to update them to our new version B. Once these are completed and back online, we can update the
+       remaining 2.
+2.Rolling application updates
+       We have the same 5 containers as before, but this time we initialize rolling updates by specifying the number of containers
+       that may be updated simultaneously, e.g. 2. The process moves updates through 2 containers at a time until all the servers
+       in the series are updated.
+       Note: Docker Swarm supports rolling updates out the box; the default is to update one container at a time. To modify this
+       use the –update-parallelism setting
+3.Blue/Green deployment
 Q.What Is Blue-Green Deployment?
 A.1.Blue-green deployment is an important technique to minimise/reduce the service downtime when deploying codebase changes to production
     by running two identical production environments called Blue and Green.
@@ -20,23 +40,21 @@ A.1.Blue-green deployment is an important technique to minimise/reduce the servi
     is ensured to be working properly in green, you can switch your routing to point to green instead of blue.
     This act of host-swapping environments after deployment can cause much shorter downtime as compared to simply deploying new version
     to a shared single environment
- 
+4.A/B testing
 
 
-
-realtime issues:
-Q. Who hasn't had issues when deploying a software change to production? No one right?
-I once accidentally deleted a bin folder from a .NET application in one of four servers when deploying a change. The site was working 
-not continuously or steadily, as a consequence, so I had to check all the servers again to find the one that was having problems. Luckily
-for me, there were only four servers.
-
-1.ways to smoothly deploy to production without risking quality
-    write a script to do deployments, Then I test the script locally and in the development environment. That way, next time I want to
-    deploy a change, I won't have to worry about missing any steps like creating a folder or giving permissions to some files. I'll just
-    need to run the script again.
-    We an have New tools has emerged like Terraform, Ansible, and Jenkins
-2.Build and Pack Your Application Only Once Like Docker
-
+Common Issues, while deploying a software change to production:
+1.I once accidentally deleted a bin folder from a .NET application in one of four servers when deploying a change. The site was working 
+  not continuously or steadily, as a consequence, so I had to check all the servers again to find the one that was having problems.
+  Luckily for me, there were only four servers.
+  
+  
+Best ways to smoothly deploy an application to production without risking quality:
+1. write a script to do deployments, Then I test the script locally and in the development environment. That way, next time I want to
+   deploy a change, I won't have to worry about missing any steps like creating a folder or giving permissions to some files. I'll just
+   need to run the script again.
+2. We an have New tools has emerged like Terraform, Ansible, and Jenkins
+3. Build and Pack Your Application Only Once Like Docker
 
 
 
