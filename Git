@@ -11,7 +11,7 @@ step1: creating release branch from the master branch
 release branch is the branch to which all feature branches are merged and where all tests are performed. Only when everything’s been
 thoroughly checked and fixed it can be merged to the master.
 
-step2: creating feature branch from the master branch
+step2: creating feature branch from the release branch
 make sure any changes that were moved to the release branch are available in the local feature branch.This avoids the conflicts
 or duplicate code while merging the feature branch to the release branch at feature completion time.
 note: should take the latest updates from the release branch daily using the merge or rebase Git commands.
