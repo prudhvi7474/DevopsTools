@@ -2,8 +2,8 @@ Git is a version control system for tracking changes in files and coordinating w
 
 Git branching strategy:
 -----------------------
-master   - production code branch
-release  - creating release branch from the master branch(production code)
+master   - production code branch / master only contains released code
+release  - creating release branch from the master branch(production code)/Development on develop branch.
 feature  - each developer creates a feature branch from release branch, and develop the new features in that branch
 hotfix   - creating hotfix branch from the master branch
 
@@ -50,6 +50,14 @@ While doing development, each dev member should rebase the code from the release
 
 This approach works fine for projects where a team is working on a single release at a time. Most teams are working on multiple releases
 at a time, so they have to maintain more than one release branch active at a time.
+
+picture:
+https://dzone.com/articles/git-strategies-for-software-development
+
+
+
+
+
 
 
 
