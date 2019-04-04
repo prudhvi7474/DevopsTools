@@ -15,5 +15,6 @@ Jenkins Interview Questions:
 4. How do you Implement automated deployment
 5. master/slave architecture
 6. parameterized builds
-7.
+7. difference between Matrix based security and Role based autherization strategy? How did you implement security for Jenkins?
+8. What are the Major issues you have faced in Jenkins?
 
