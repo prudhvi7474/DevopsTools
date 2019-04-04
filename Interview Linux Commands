@@ -1,7 +1,9 @@
 Shell Scripting Interview Questions:
 1. Write scripts for monitoring, log processing, metrics collection and data visualization.
-Q.How to delete log files which are older than x Days 
-A.find LogfailsDirectoryPath -mtime +7 -exec rm {} \;
+Q. How to delete log files which are older than x Days 
+A. find LogfailsDirectoryPath -mtime +7 -exec rm {} \;
+Q. How to check port numbers of all the services running on a server?
+A. netstat -tlpn | grep httpd (to check port no of httpd service)
 
 
 Jenkins Interview Questions:
