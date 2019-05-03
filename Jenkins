@@ -80,3 +80,26 @@ Execute job and you should be able to seen build has been deployed on Tomcat ser
 
 
 
+
+The main benifit of ht eparameterizes jenkins jobs, we cn reuse these jobs
+The Build Pipeline plugin is excellent for visuallising
+
+YOU MUST DEFINE THE PARAMETER IN DOWNSTREAM JOBS VIA  "This project is parameterized". For example, if job1 passes ABC=123 to job2 then in job2 mark the job as "This project is parameterized" and "Add Parameter" named "ABC".
+
+name is the name of the parameter name.
+To access this parameter ${name} or $name
+
+Booliean paramter
+string parameter
+file parameter
+choic eparameter
+credentials parameter
+password parameter
+
+
+You can also use a custom variable "$BRANCH". During the trigger event this value will be replaced with the branch that triggered the build.
+
+
+
+
+
