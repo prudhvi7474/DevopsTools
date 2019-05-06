@@ -11,6 +11,9 @@ A. ps aux | sort -nk 3:
 Q. 
 
 
+how to give execute permission to a file?
+chmod +x deploy
+
 
 ~/.ssh/authorized_keys
 
