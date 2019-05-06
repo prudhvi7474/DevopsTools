@@ -100,6 +100,14 @@ password parameter
 You can also use a custom variable "$BRANCH". During the trigger event this value will be replaced with the branch that triggered the build.
 
 
+we have to configure Jenkins hook url in Github seeting's under webhook&services section
+You made some changes in your project.
+You push those changes in Github on master or any branch.
+Github will notify Jenkins about the new push. ( We will configure it )
+Jenkins will then run the commands you ask it to run.
+Those commands will contain the following.
+Test script.
+Deployment script.
 
 
 
