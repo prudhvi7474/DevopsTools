@@ -118,3 +118,7 @@ find /usr -type f -mtime 2   // find files in /usr which were modified two days 
 find /usr -type f -mtime 2 -amin 5      //find files modified 2 days ago and accessed 5 minutes ago
 find /usr -type f -mtime +50 -mtime -100   //find files modified between 50 and 100 days ago  
 
+
+
+Jenkins requires us to have the private ssh key for the server we want to connect with Jenkins server i.e remote server
+https://linuxtechlab.com/how-to-easily-add-ssh-credentials-on-jenkins-server/
