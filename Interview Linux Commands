@@ -82,3 +82,39 @@ Git Interview Questions?
 1. Explain Branching Strategy in your organisation?
 2. 
 
+
+Finding Files with Names, Find Files and Directories Based on Date and Time,
+Find Files and Directories Based on Size, Find Files Based on their Permissions,
+
+
+find command attributes
+path
+-type f or -type d
+-name fileName or directoryName  //techmint.php or *.php
+-exec rm -f {} \;
+-mtime 
+-size
+
+
+
+• mtime —the time that the contents of a file were last modified 
+• atime—the time that a file was read or accessed 
+• ctime—the time that a file’s status was changed
+Modification time: The last time when the file’s content was modified.
+Access time: The last time when the file was read.
+Change time: The last time when the file (either its content or metadata, such as permissions) were modified.
+
+-mtime 2: The file was modified 2 days ago (i.e. in the last 48 to 72 hours).
+-mtime -2: The file was modified less than 2 days ago (i.e. within the last 48 hours).
+-mtime +2: The file was modified more than 2 days ago (i.e. 3 or more days, which means 72 hours or later).
+
+
+
+
+find /usr/share  or find .
+find /usr -name NEWS.txt - Finding items by their name
+find /usr -type f -name '*.txt'  - Searching for files or directories
+find /usr -type f -mtime 2   // find files in /usr which were modified two days ago           // Searching for files based on date and time
+find /usr -type f -mtime 2 -amin 5      //find files modified 2 days ago and accessed 5 minutes ago
+find /usr -type f -mtime +50 -mtime -100   //find files modified between 50 and 100 days ago  
+
