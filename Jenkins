@@ -111,3 +111,15 @@ Deployment script.
 
 
 
+Active session: [1] haysdevops@hrlnxot4260.emea.hays.loc
+Can't get attributes of file '/usr/local/springboot/apijars/onlineutilityapi-1.0-SNAPSHOT.jar'.
+No such file or directory.
+Error code: 2
+Error message from server: No such file
+
+D:\JenkinsHome\jobs\PreProd_ProjectSAPI_OnlineUtilityAPI\workspace>exit 1 
+Build step 'Execute Windows batch command' marked build as failure
+Notifying upstream projects of job completion
+Finished: FAILURE
+
+
