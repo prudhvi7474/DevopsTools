@@ -122,4 +122,24 @@ Build step 'Execute Windows batch command' marked build as failure
 Notifying upstream projects of job completion
 Finished: FAILURE
 
+#!/bin/bash
+jar_pid() {
+  echo `ps aux | grep onlineutilityapi-1.0-SNAPSHOT.jar | grep -v grep | awk '{ print $2 }'`
+}
+
+  pid=$(jar_pid)
+  if [ -n "$pid" ]
+  then
+    echo "kill -9 $pid"
+    kill -9 $pid
+  else
+    echo "Jar is not running"
+fi
+
+windows batch script
+chmod o+x /usr/local/springboot/apijars/onlineutilityapi-1.0-SNAPSHOT.jar
+nohup java -jar /usr/local/springboot/apijars/onlineutilityapi-1.0-SNAPSHOT.jar  >/log/springbootlogs/onlineUtilityapi.log 2>&1 &
+env
+
+
 
