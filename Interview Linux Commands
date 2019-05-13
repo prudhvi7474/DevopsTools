@@ -134,7 +134,8 @@ ssh client is a software that connects windows to Linux server.
 Putty is a ssh client, we need to install putty in our windows server  to connect remote linux server, It uses the network protocols like ssh, telnet, rlogin 
 
 To make a connection from
-Windows/Linux  -> Linux          ssh
+Windows/Linux    -> Linux        ssh connection
+If it is windows -> Linus        ssh connection using ssh client(putty)
 windows        -> Windows        RDP
 
 1.WinScp
