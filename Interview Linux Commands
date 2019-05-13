@@ -122,3 +122,31 @@ find /usr -type f -mtime +50 -mtime -100   //find files modified between 50 and 
 
 Jenkins requires us to have the private ssh key for the server we want to connect with Jenkins server i.e remote server
 https://linuxtechlab.com/how-to-easily-add-ssh-credentials-on-jenkins-server/
+
+
+
+
+
+SSH is typically used to log into a remote machine and execute commands 
+It can transfer files using SSH file transfer (SFTP) or secure copy (SCP) protocols.
+
+ssh client is a software that connects windows to Linux server.
+Putty is a ssh client, we need to install putty in our windows server  to connect remote linux server, It uses the network protocols like ssh, telnet, rlogin 
+
+To make a connection from
+Windows/Linux  -> Linux          ssh
+windows        -> Windows        RDP
+
+1.WinScp
+File Transfer from Windows to any server i.e windows/Linux(local server to remote server),it uses SFTP,Scp,FTP protocols to transfer data. For this you must install WinScp in your local windows server.
+2.Scp
+The SCP is a network protocol, securely transferring files between a local host and a remote host or between two remote hosts.SCP uses Secure Shell (SSH) for data transfer. first we need ssh connection should be establish and then you can run the scp command.
+ssh  username@serverIP
+scp  <options>  sourcefilepath  destination
+ex: scp  /root/file.text   username@ServerIP:/home/user
+
+
+
+
+
+
