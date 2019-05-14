@@ -27,6 +27,8 @@ configurations upto your entire automation jobs.
 
 how to check jenkins logs on Mac/Linux
 /var/log/jenkins/jenkins.log
+or 
+Go to Manage jenkins -> system logs
 
 how to increase Jenkins Heap space?
 
