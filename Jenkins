@@ -31,6 +31,11 @@ or
 Go to Manage jenkins -> system logs
 
 how to increase Jenkins Heap space?
+A.We use Jennkins extensively, masters running on 96GB RAM, 4-core Xeon machines, with up to 100 slave machines. The main problems are:
+memory hog - eats up as much RAM as one gives him, and when the garbage collector kicks in, connections to slaves might time out. Needs
+careful tuning of the Java GC params. Heap size needs to be set very high.
+GUI will become extemly slow when many jobs are running. Meant to be interactive, it will poll the server regularely and overload
+it when lots of jobs are running.
 
 
 
