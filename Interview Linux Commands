@@ -153,7 +153,10 @@ publish over ssh plugin:
 https://nozaki.me/roller/kyle/entry/articles-jenkins-sshdeploy
 https://www.serverkaka.com/2018/08/send-build-artifacts-over-ssh-jenkins.html
 notice the difference
-
+in Add build step
+   send files or execute commands over ssh
+in post build actions
+   send build artifacts over ssh
 
 
 
