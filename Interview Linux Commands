@@ -149,6 +149,10 @@ scp  <options>  sourcefilepath  destination
 ex: scp  /root/file.text   username@ServerIP:/home/user
 
 
+publish over ssh plugin:
+https://nozaki.me/roller/kyle/entry/articles-jenkins-sshdeploy
+
+
 
 
 
