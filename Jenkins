@@ -39,6 +39,13 @@ it when lots of jobs are running.
 
 
 How can i use jenkins to rollback previous version of deploy?
+In this case, you just need parametrize your current pipeline to receive branch name or tag as parameter.
+Workflow could be:
+Before merge your release branch to master , verify existence of tag with previous stable release or create a new one.
+Merge your release (qa, test, or whatever) to master branch
+Execute your current pipeline with master branch.
+If some error is detected, perform a rollback using your SCM ( csv, svn, git, etc). For instance, bitbucket has a revert option in merged pull request section.
+Execute again the same pipeline with master branch as parameter. If rollback was not possible, Execute this pipeline with last stable tag as parameter.
 
 
 
