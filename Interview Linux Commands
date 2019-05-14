@@ -151,6 +151,8 @@ ex: scp  /root/file.text   username@ServerIP:/home/user
 
 publish over ssh plugin:
 https://nozaki.me/roller/kyle/entry/articles-jenkins-sshdeploy
+https://www.serverkaka.com/2018/08/send-build-artifacts-over-ssh-jenkins.html
+notice the difference
 
 
 
