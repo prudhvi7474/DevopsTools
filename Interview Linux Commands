@@ -162,6 +162,8 @@ in post build actions
 
 
 Redirecting and Rewriting urls in apache webserver:
+https://dzone.com/articles/running-tomcat-behind-apache***
+
 You will frequently need to redirect one request location to another, and there are a variety of ways to do this.
 
 Navigate to the conf folder and open httpd.conf file.
