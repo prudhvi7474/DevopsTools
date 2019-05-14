@@ -201,4 +201,16 @@ RewriteRule ^portfolio/?$ index.php?page=portfolio [L]
 #RewriteRule ^.*$ index.php?page=blog [L]
 
 
+In post steps
+execute shell script on remote host using ssh
+ ssh site  - username@serverip
+ command
+
+
+
+
+/var/log/httpd/access_log
+/var/log/httpd/error_log
+
+
 
