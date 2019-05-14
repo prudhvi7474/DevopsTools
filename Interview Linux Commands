@@ -88,12 +88,12 @@ Find Files and Directories Based on Size, Find Files Based on their Permissions,
 
 
 find command attributes
-path
--type f or -type d
--name fileName or directoryName  //techmint.php or *.php
--exec rm -f {} \;
--mtime 
--size
+1. path
+2. -type f or -type d
+3. -name fileName or directoryName  //techmint.php or *.php
+4. -exec rm -f {} \;
+5. -mtime 
+6. -size
 
 
 
