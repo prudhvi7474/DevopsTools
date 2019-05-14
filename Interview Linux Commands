@@ -164,6 +164,30 @@ in post build actions
 Redirecting and Rewriting urls in apache webserver:
 You will frequently need to redirect one request location to another, and there are a variety of ways to do this.
 
+Navigate to the conf folder and open httpd.conf file.
+Make the following configurations in the < VirtualHost >  block and Restart your Apache server:
+<VirtualHost *:80>
+   ServerAdmin webmaster@domain.com
+   DocumentRoot /var/www/webroot/ROOT
+   ServerName website.jelastic.com
+   ServerAlias *
+
+   RewriteEngine On
+
+   RewriteRule ^/application1/(.*) http://env-tomcat.jelastic.com/app1/ [P]
+   ProxyPassReverse /application1/ http://env-tomcat.jelastic.com/app1/
+
+   RewriteRule ^/application2/(.*) http://second-tomcat.jelastic.com/app2/ [P]
+   ProxyPassReverse /application2/ http://second-tomcat.jelastic.com/app2/
+
+   RewriteLog "/var/log/httpd/rewrite.log"
+
+   ErrorLog logs/dummy-host.jelastic.com-error_log
+   CustomLog logs/dummy-host.jelastic.com-access_log common
+</VirtualHost>
+
+
+
 The Redirect directive does a simple redirection from one location to another.
 Redirect /one.html /another.html
 Redirect /something/here.html http://elsewhere.com/there.html
