@@ -25,6 +25,9 @@ Consider the 'Jenkins home directory' as a database. It’s very important to ta
 configurations upto your entire automation jobs.
 /var/lib/jenkins
 
+how to check jenkins logs on Mac/Linux
+/var/log/jenkins/jenkins.log
+
 how to increase Jenkins Heap space?
 
 
