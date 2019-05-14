@@ -161,4 +161,18 @@ in post build actions
 
 
 
+Redirecting and Rewriting urls in apache webserver:
+You will frequently need to redirect one request location to another, and there are a variety of ways to do this.
+
+The Redirect directive does a simple redirection from one location to another.
+Redirect /one.html /another.html
+Redirect /something/here.html http://elsewhere.com/there.html
+
+RewriteEngine On
+RewriteRule ^blog/?$ index.php?page=blog [L]
+RewriteRule ^about/?$ index.php?page=about [L]
+RewriteRule ^portfolio/?$ index.php?page=portfolio [L]
+#RewriteRule ^.*$ index.php?page=blog [L]
+
+
 
