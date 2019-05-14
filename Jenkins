@@ -38,6 +38,9 @@ GUI will become extemly slow when many jobs are running. Meant to be interactive
 it when lots of jobs are running.
 
 
+How can i use jenkins to rollback previous version of deploy?
+
+
 
 
 how you do build automation? how you trigger the build, is it CI or it is manual(click on build now)?
