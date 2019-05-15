@@ -238,7 +238,10 @@ restart the system
 
 
 https://www.sumologic.com/insight/create-pipeline-with-aws-codepipeline/
-The AWS CodePipeline Plugin for Jenkins, https://wiki.jenkins.io/display/JENKINS/AWS+CodePipeline+Plugin
+The AWS CodePipeline Plugin for Jenkins
+https://wiki.jenkins.io/display/JENKINS/AWS+CodePipeline+Plugin
+https://dzone.com/articles/create-a-pipeline-using-the-aws-codepipeline-conso
+
 AWS CodePipeline:
 CodePipeline automates the build, test, and deploy phases of your release process every time there
 is a code change, based on the release model you define.This enables you to rapidly and reliably deliver features and updates. 
