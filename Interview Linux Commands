@@ -213,4 +213,13 @@ execute shell script on remote host using ssh
 /var/log/httpd/error_log
 
 
+task1:
+
+Change Web server configuration to 
+a. Remove redirect for all quicksilver requests to quicksilver1.
+b. Change Proxy pass rule to point quicksilver to LB on which depolyment will be done.
+c. Restart Web services
+
+
+
 
