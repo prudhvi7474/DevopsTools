@@ -222,4 +222,54 @@ c. Restart Web services
 
 
 
+how to enable the IIS for windows
+start
+Control panel
+programs
+Turn windows feature on / off
+Check the IIS services (4th and 5th checkbox)
+ok
+restart the system
+
+
+
+
+
+
+
+https://www.sumologic.com/insight/create-pipeline-with-aws-codepipeline/
+The AWS CodePipeline Plugin for Jenkins, https://wiki.jenkins.io/display/JENKINS/AWS+CodePipeline+Plugin
+AWS CodePipeline:
+CodePipeline automates the build, test, and deploy phases of your release process every time there
+is a code change, based on the release model you define.This enables you to rapidly and reliably deliver features and updates. 
+
+You can easily integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin.
+
+
+1.pipeline name
+2.source provider  // setting the source code for the pipeline
+  In this step we need to tell AWS how are we managing our code. There are a few options available
+  Amazon S3        // In order to use S3 as the source, you’ll need to provide a bucket name for an S3 bucket which has versioning enabled.
+  AWS CodeCommit   // 
+  GitHub 
+3.Build provider
+  Defining the Build Process for Your Pipeline. AWS offers three options for build providers:
+  AWS CodeBuild
+  Jenkins
+  Solano CI
+4.Deploying the Build with CodePipeline      //deployment to an environment for testing and/or production use
+  AWS CodePipeline offers three options to do this—or you can select No Deployment if you want CodePipeline to only build your project. Those three deployment options are:
+  AWS Elastic BeanStack
+  AWS CodeDeploy
+  AWS CloudFormation
+
+AWS Code Deploy FAQ'S
+https://aws.amazon.com/codedeploy/faqs/
+AWS code Deploy tutorial:
+http://www.tothenew.com/blog/aws-code-deploy-a-sample-walkthrough/
+
+
+
+
+
 
