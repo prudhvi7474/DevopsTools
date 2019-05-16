@@ -221,6 +221,10 @@ b. Change Proxy pass rule to point quicksilver to LB on which depolyment will be
 c. Restart Web services
 
 
+Tasks:
+Temp Files older then 3 days has been cleared.
+
+
 
 how to enable the IIS for windows
 start
@@ -371,7 +375,22 @@ front-end (client to load balancer) connections and a protocol and a port for ba
 connections.
 HTTP  80
 The rules that you define for a listener determine how the load balancer routes requests to the targets in one or more target groups.
-For Application Load balancer 
+For Application Load balancer IF and THEN rules will be exist
+url consist of following components
+protocol://hostname:port/path?query
+protocol:
+The protocol (HTTP or HTTPS). You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.
+hostname:
+The hostname. A hostname is case-insensitive, can be up to 128 characters in length, and consists of alpha-numeric characters,
+wildcards (* and ?), and hyphens (-).
+port:
+The port (1 to 65535).
+path:
+The absolute path, starting with the leading "/". A path is case-sensitive, can be up to 128 characters in length, and consists of 
+alpha-numeric characters, wildcards (* and ?), & (using &amp;), and the following special characters: _-.$/~"'@:+.
+Query:
+The query parameters.
+
 2.[EC2-VPC] For Available subnets, select at least one available public subnet.To improve the availability of your
 load balancer, select more than one public subnet. You can add at most one subnet per Availability Zone.If you 
 select a subnet from an Availability Zone where there is already an selected subnet, this subnet replaces the
@@ -465,8 +484,6 @@ yum install python-pip -y
 pip install awscli 
 
 
-Tasks:
-Temp Files older then 3 days has been cleared.
 
 
 
