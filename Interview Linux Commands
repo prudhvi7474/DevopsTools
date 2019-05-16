@@ -370,6 +370,8 @@ EC2-Classic or a specific VPC.),and a listener.
 front-end (client to load balancer) connections and a protocol and a port for back-end (load balancer to instance)
 connections.
 HTTP  80
+The rules that you define for a listener determine how the load balancer routes requests to the targets in one or more target groups.
+For Application Load balancer 
 2.[EC2-VPC] For Available subnets, select at least one available public subnet.To improve the availability of your
 load balancer, select more than one public subnet. You can add at most one subnet per Availability Zone.If you 
 select a subnet from an Availability Zone where there is already an selected subnet, this subnet replaces the
@@ -461,6 +463,10 @@ output: /usr/local/bin/python
 
 yum install python-pip -y
 pip install awscli 
+
+
+Tasks:
+Temp Files older then 3 days has been cleared.
 
 
 
