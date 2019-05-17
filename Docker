@@ -339,6 +339,17 @@ https://docs.bitnami.com/aws/how-to/ecs-rds-tutorial/
 https://dzone.com/articles/scaling-with-amazon-ecs
 
 
+ECS Cluster:
+Run and Manage Docker containers as a Cluster
+AWS ECS is a fully-managed, scalable and production-ready platform for running Docker containers.
+Clusters may contain more than one Amazon EC2 instance
+
+Each cluster is comprised of one or more services. Each service is comprised of one or more tasks. And each task is 
+comprised of one or more containers.
+
+We will create a task defintion to spin up a single container for the app.
+
+
         
 
   
