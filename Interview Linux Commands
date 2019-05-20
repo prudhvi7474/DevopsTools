@@ -486,6 +486,34 @@ pip install awscli
 
 
 
+https://www.varonis.com/blog/what-is-a-proxy-server/
+
+
+A proxy server is basically a computer on the internet with its own IP address that
+your computer knows. When you send a web request, your request goes to the proxy server 
+first. The proxy server then makes your web request on your behalf, collects the response
+from the web server, and forwards you the web page data so you can see the page in your
+browser.
+
+When the proxy server forwards your web requests, it can make changes to the data you send
+and still get you the information that you expect to see. A proxy server can change your
+IP address, so the web server doesn’t know exactly where you are in the world. It can encrypt
+your data, so your data is unreadable in transit. And lastly, a proxy server can block access
+to certain web pages, based on IP address.
+
+
+cache data to speed up common requests.
+
+improve performance:
+Consider the case where both user X and user Y access the World Wide Web through a proxy server.
+First user X requests a certain Web page, which we'll call Page 1. Sometime later, user Y requests
+the same page. Instead of forwarding the request to the Web server where Page 1 resides, which
+can be a time-consuming operation, the proxy server simply returns the Page 1 that it already
+fetched for user X. Since the proxy server is often on the same network as the user, this is a
+much faster operation. Real proxy servers support hundreds or thousands of users. 
+
+
+
 
 
 
