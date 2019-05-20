@@ -182,7 +182,10 @@ ssh plugin           - https://wiki.jenkins.io/display/JENKINS/SSH+plugin
 publish over ssh     -
 SSH Agent Plugin     - https://plugins.jenkins.io/ssh-agent   //This plugin allows you to provide SSH credentials to builds via a ssh-agent in Jenkins.
 Copy Artifact Plugin - https://wiki.jenkins.io/display/JENKINS/Copy+Artifact+Plugin
-parameterized trigger plugin - 
+parameterized trigger plugin -
+
+
+How to pass parameter to downstream job in Pipeline job?
 
 
 
