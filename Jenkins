@@ -163,3 +163,26 @@ env
 
 
 
+The Role Strategy Plugin enable you to assign different roles and privileges to different users. 
+https://www.guru99.com/create-users-manage-permissions.html
+
+Jenkins Buildpipeline view
+https://www.guru99.com/jenkins-pipeline-tutorial.html
+
+automatically scaling Jenkins Slaves based on the workload of jobs
+
+Jenkins-Deploy-Plug-in  - This one has lots of issues, which is not really trustworthy to deploy to production
+Jenkins Publish over SSH Plugin  - For this, you need to change the global configuration, which is manual work for every deploy.
+
+Any ideas how to solve this? Maybe with some scripts or plugins?
+
+https://stackoverflow.com/questions/13976373/continuous-deployment-with-jenkins
+
+ssh plugin           - https://wiki.jenkins.io/display/JENKINS/SSH+plugin
+publish over ssh     -
+SSH Agent Plugin     - https://plugins.jenkins.io/ssh-agent   //This plugin allows you to provide SSH credentials to builds via a ssh-agent in Jenkins.
+Copy Artifact Plugin - https://wiki.jenkins.io/display/JENKINS/Copy+Artifact+Plugin
+parameterized trigger plugin - 
+
+
+
