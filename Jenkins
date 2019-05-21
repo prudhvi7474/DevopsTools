@@ -242,3 +242,6 @@ Enter any directory to “Remote Directory”
 Click “Test Configuration”
 Click “Save” at bottom of the page
 
+
+send build artifacts over ssh
+transfer files or execute commands remotely
