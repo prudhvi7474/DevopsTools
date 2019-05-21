@@ -389,6 +389,29 @@ much faster operation. Real proxy servers support hundreds or thousands of users
 
 
 
+ssh logs
+/var/log/auth.log  - for ubuntu
+/var/log/messages
+/var/log/secure
+/var/log/sshd
+
+Most possible error prone scenarios:
+1. Host is not allowed to do ssh to the server
+2. A direct root login may not be allowed
+3. AllowUsers and AllowGroup is defined for the target node sshd config and hence the login fails
+4. Many times a password less authentication fails due to incorrect permision of the necessary directory and files like .ssh, authorized_keys etc so make sure the permission of these files and directories are not world readable or writable.
+
+Linux interview questions:
+https://www.golinuxhub.com/2018/06/scenario-based-interview-question-beginner-experience-linux.html
+https://www.tecmint.com/ssh-interview-questions/
+
+
+
+/etc/nginx/nginx.conf
+The file starts with 4 directives: user, worker_processes, error_log, and pid. 
+
+
+
 
 
 
