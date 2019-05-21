@@ -245,3 +245,7 @@ Click “Save” at bottom of the page
 
 send build artifacts over ssh
 transfer files or execute commands remotely
+
+
+
+Jenkins home directory  c:\program Files (X86)\Jenkins
