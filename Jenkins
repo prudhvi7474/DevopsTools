@@ -188,9 +188,57 @@ Clone Workspace SCM Plugin
 
 How to pass parameter to downstream job in Pipeline job?
 
-
-
 https://itisatechiesworld.wordpress.com/jenkins-related-articles/jenkins-configuration/jenkins-passing-a-parameter-from-one-job-to-another/
 
 
+minify-maven plugin
+maven-surefire plugin - This is for TestNG
+
+
+error:
+
+17:26:45 [ERROR] missing ; before statement at static-combined.js line 16416:46
+17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofileOAOT+"/getOfficeInfo.do";
+17:26:45                                               ^
+17:26:45 
+17:26:45 [ERROR] missing ; before statement at static-combined.js line 16418:46
+17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getOfficeInfo.do";
+17:26:45                                               ^
+17:26:45 
+17:26:45 [ERROR] missing ; before statement at static-combined.js line 16434:46
+17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getAccCodeInfo.do";
+3 syntax errors
+
+
+
+% %   ho wqot call variables in code 
+$
+
+
+the parameter name is taken as an environment variable
+After configuring the job, whenever you click the build now button, Jenkins prompts for the parameter
+When you are using file Parameter, the uploaded file will be placed into the working directory
+
+define the parameter like variable  BUILD_NUMBER =
+Passing build number as a parameter and accesing that particular variable
+$(BUILD_NUMBER)
+
+mvn clean install -Pjenkins -DBUILD_NUMBER=${BUILD_NUMBER}
+
+
+client server(SSH server) architecture
+
+jenkins      sshserver
+
+Manage Jenkins
+Configure System
+Publish Over SSH section
+enter /Users/Shared/Jenkins/.ssh/id_rsa to path to key
+Click “Add” at “SSH Servers”
+Enter any logical name to “Name”
+Enter IP Address or Hostname of the server to “Hostname”
+Enter the user name to log in to “Username”
+Enter any directory to “Remote Directory”
+Click “Test Configuration”
+Click “Save” at bottom of the page
 
