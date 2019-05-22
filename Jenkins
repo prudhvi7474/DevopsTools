@@ -195,19 +195,7 @@ minify-maven plugin
 maven-surefire plugin - This is for TestNG
 
 
-error:
 
-17:26:45 [ERROR] missing ; before statement at static-combined.js line 16416:46
-17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofileOAOT+"/getOfficeInfo.do";
-17:26:45                                               ^
-17:26:45 
-17:26:45 [ERROR] missing ; before statement at static-combined.js line 16418:46
-17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getOfficeInfo.do";
-17:26:45                                               ^
-17:26:45 
-17:26:45 [ERROR] missing ; before statement at static-combined.js line 16434:46
-17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getAccCodeInfo.do";
-3 syntax errors
 
 
 
@@ -249,3 +237,141 @@ transfer files or execute commands remotely
 
 
 Jenkins home directory  c:\program Files (X86)\Jenkins
+
+
+Jenkins errors:
+1. error:
+17:26:45 [ERROR] missing ; before statement at static-combined.js line 16416:46
+17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofileOAOT+"/getOfficeInfo.do";
+17:26:45                                               ^
+17:26:45 
+17:26:45 [ERROR] missing ; before statement at static-combined.js line 16418:46
+17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getOfficeInfo.do";
+17:26:45                                               ^
+17:26:45 
+17:26:45 [ERROR] missing ; before statement at static-combined.js line 16434:46
+17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getAccCodeInfo.do";
+3 syntax errors
+Answer: source cod eerror
+
+2. missing maven sure fire plugin
+   this is for TESTNG 
+   Answer: we need to add maven-sure-fire dependency in pom.xml
+   
+3.tomcat manager expection
+  Answer: we have to give manager-script roles permission in tomcat-users.xml
+  or
+  restart the tomcat server
+  
+  service --status-all
+service --status-all | more
+service --status-all | grep ntpd
+service --status-all | less
+
+PRINT THE STATUS OF ANY SERVICE
+service httpd status
+
+LIST SERVICE AND THEIR OPEN PORTS
+netstat -tulpn
+
+
+TURN ON / OFF SERVICE
+ntsysv
+chkconfig service off
+chkconfig service on
+chkconfig httpd off
+chkconfig ntpd on
+
+
+Go through this link about httpd
+https://docs.bmc.com/docs/display/public/bsd7700/Modifying+the+httpd.conf+file+in+the+Apache+conf+folder
+
+
+
+https://blog.couchbase.com/continuous-deployment-with-jenkins-and-net/
+MSBuild.exe path   c:\Program Files(x86)\MSBuild\14.0\Bin
+                   C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe
+In the path field, insert the fully qualified path to msbuild.exe
+
+
+In build step,
+ Build a Visual Studio Project or solution using MSBuild - in this section you have to set 2 parameters or fields
+   MsBuild Build File - specify the name of the build file
+                        enter the path to the project/solution that needs to be built in the format - ${WORKSPACE}\PhantomTube\PhantomTube.sln
+   command Line Arguements  -  /p:Configuration=Release is going to build your project in Release mode. 
+                               /t:build/p:Platform Target=x86 /p:Configuration=Release /maxcpucount
+
+
+
+
+Using Continuous Integration/Continuous Deployment, enables a workflow like this:
+Code, build and test locally on your dev. box (as usual)
+Check source code in to a development branch in your favourite Source Control Management System.
+Optional code review by team members.
+Merge your changes to the main (release) branch.
+The CI Server will detect the changes to the main branch and download, compile and deploy/install your application on the release server.
+
+cloning the source / checkout the cod efrom scm
+
+
+What’s important to note here is the path to the “workspace” as this is where the source code is downloaded to and built from. This knowledge can be very helpful when debugging the CI setup.
+
+   
+how to change jenkins home directory
+  Jenkins->Manage Jenkins->Configure System->home directory->advanced
+we can change our workspace and build directory
+${JENKINS_HOME} — Jenkins home directory
+
+what is the difference b/n projetc and solution in .net
+When you create an app, website, etc. in Visual Studio, you start with a project. In a logical sense, a project contains all the source code files, icons, images, data files, etc. that are compiled into an executable, library
+A project also contains compiler settings and other configuration files that might be needed by various services or components that your program communicates with.
+
+A project is contained within a solution.It's simply a container for one or more related projects, along with build information, Visual Studio window settings, and any miscellaneous files that aren't associated with a particular project.
+A solution is described by a text file (extension .sln) with its own unique format; it's not intended to be edited by hand.
+Extension	Name	                      Description
+.sln	        Visual Studio Solution	      Organizes projects, project items, and solution items in the solution.
+
+
+Solution
+  ProjectA
+    -file
+    -file
+     ....
+  ProjectB
+    -File
+    -File
+     ....
+
+solution 'MyApp1'
+   WebApplication1Project
+       webform1.aspx
+       login.aspx
+       registration.aspx
+   webApplication2Project
+
+
+Connect to Source Controls via HTTPS or SSH
+
+Parametrize Build Configurations
+
+Build and package your code into a TeamCity Artifact
+
+Run Unit Tests and produce Code Coverage R`````eports
+
+Checking GitHub Merge Pull Requests automatically
+
+Manage and subscribe to notifications and alert
+
+Produce Docker Images and Deploy to Amazon Elastic Container Services
+
+
+Connecting to a Version Control System (VCS):
+In this lecture I will show you that how you can connect to a Version Control System (VCS) also known as a Source Control, such as hosted Gir, GitHub or BitBucket.
+
+You can connect to GitHub and BitBucket either using a username/password pair or using a SSH key. I will demonstrate that how you can generate a SSH key and then connect to GitHub using the key.
+
+
+
+
+
+
