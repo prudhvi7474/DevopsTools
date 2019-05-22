@@ -374,6 +374,7 @@ You can connect to GitHub and BitBucket either using a username/password pair or
 
 NuGet is for downloading the necessary packages, to build the job using MSBuild
 NuGet is for downloading the necessary packages for MSBuild
+https://www.automatetheplanet.com/integrate-jenkins-msbuild-nuget/
 
 
 
