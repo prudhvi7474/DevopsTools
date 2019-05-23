@@ -230,19 +230,18 @@ Jenkins home directory  c:\program Files (X86)\Jenkins
 
 
 Jenkins errors:
-1. error:
-17:26:45 [ERROR] missing ; before statement at static-combined.js line 16416:46
-17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofileOAOT+"/getOfficeInfo.do";
-17:26:45                                               ^
-17:26:45 
-17:26:45 [ERROR] missing ; before statement at static-combined.js line 16418:46
-17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getOfficeInfo.do";
-17:26:45                                               ^
-17:26:45 
-17:26:45 [ERROR] missing ; before statement at static-combined.js line 16434:46
-17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getAccCodeInfo.do";
-3 syntax errors
-Answer: source cod eerror
+1. 17:26:45 [ERROR] missing ; before statement at static-combined.js line 16416:46
+   17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofileOAOT+"/getOfficeInfo.do";
+   17:26:45                                               ^
+   17:26:45 
+   17:26:45 [ERROR] missing ; before statement at static-combined.js line 16418:46
+   17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getOfficeInfo.do";
+   17:26:45                                               ^
+   17:26:45 
+   17:26:45 [ERROR] missing ; before statement at static-combined.js line 16434:46
+   17:26:45                         varÂ otConsultantURLÂ = $scope.OTprofile+"/getAccCodeInfo.do";
+   3 syntax errors
+  Answer: source code eerror
 
 2. missing maven sure fire plugin
    this is for TESTNG 
@@ -262,6 +261,7 @@ Answer: source cod eerror
   Build step 'Execute Windows batch command' marked build as failure
   Notifying upstream projects of job completion
   Finished: FAILURE  
+  Answer:
   
   
   
