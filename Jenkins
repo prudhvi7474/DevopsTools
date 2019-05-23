@@ -263,6 +263,8 @@ Jenkins errors:
   Finished: FAILURE  
   Answer:
   
+5. [SSH] exception, channel is not opening  
+  
   
   
   service --status-all
@@ -377,6 +379,43 @@ You can connect to GitHub and BitBucket either using a username/password pair or
 NuGet is for downloading the necessary packages, to build the job using MSBuild
 NuGet is for downloading the necessary packages for MSBuild
 https://www.automatetheplanet.com/integrate-jenkins-msbuild-nuget/
+
+
+ssh plugin 
+publish over ssh plugin
+copy artifact plugin
+
+
+
+
+I try to use the SSH Plugin for jenkins. I go to the global configuration of my jenkins where I try to describe my configuration.
+Hostname: IP of server
+Port: 22
+Username: usernamex
+Keyfile: Here I need to place the key which is necessary to ssh
+
+
+https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
+
+
+
+
+exec command in Linux is used to execute a command from the bash itself
+This command does not create a new process it just replaces the bash with the command to be executed
+
+cp /tmp/my_application.war $WEBAPP
+
+
+0 0 1 * * command /directory/file.ext
+
+
+
+This will run the command foo at 12:00AM on the first of every month
+
+0 0 1 * * /usr/bin/foo
+
+
+https://manadaym.github.io/2018/01/05/publish-over-ssh/
 
 
 
