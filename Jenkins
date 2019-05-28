@@ -507,6 +507,21 @@ hrlnxpd2105
  	Server IP	
 10.190.8.39
 
+
+SSH remote hosts
+SSH sites	
+ 	Hostname	
+hrlnxpd2105
+
+ 	Port	
+22
+
+ 	Credentials	
+ 
+add
+ 		
+
+
  		
 
 
