@@ -422,5 +422,69 @@ how to increase Jenkins Heap space?
 https://stackoverflow.com/questions/14762162/how-do-i-give-jenkins-more-heap-space-when-its-running-as-a-daemon-on-ubuntu
 
 
+Goals and Options: -Dmaven.test.skip=true -P preprod clean package -U -e -X
+post steps: run only if build succeed*/ Run only if build succeeds or is unstable/ Run regardless of build result	
+build settings: Email Notification
+                  Recipients- chandan.kumar2@hays.com
+                              Send e-mail for every unstable build
+                              Send separate e-mails to individuals who broke the build
+                              Send e-mail for each failed module	
+post build actions:
+    Deploy war/ear to a container
+          WAR/EAR Files: **/*.war
+          ContextPath  : /CompositeViewAPI
+          Containers:
+    Editable Email Notification
+          Project From: deployment@hays.team
+          Project Recipient List: gaurav.yadav@hays.com
+
+
+
+Build
+  Root Pom: pom.xml
+  Goals and options: -Dmaven.test.skip=true clean package -U -e -X
+   
+
+pre steps
+  Execute shell script on remote host using ssh
+                   SSH site: root@hrlnxpd4079:22
+                   Command:  #!/bin/bash
+jar_pid() {
+  echo `ps aux | grep BarbourABI-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{ print $2 }'`
+}
+
+  pid=$(jar_pid)
+  if [ -n "$pid" ]
+  then
+    echo "kill -9 $pid"
+    kill -9 $pid
+  else
+    echo "Jar is not running"
+ fi
+
+how to define the function in shellscripting
+how to access/call the function in shellscripting
+
+
+
+post steps:
+Execute Windows batch command
+   command: psftp.exe -l root -pw "Q!W@E#R$T%Y^U&89" 10.51.144.90 -b D:\DeployScript\preprodbarbourapi.txt
+
+
+Execute shell script on remote host using ssh
+   SSH site: root@hrlnxpd4079:22
+   Command:  nohup java -jar -Dspring.profiles.active=preprod /usr/local/springboot/BarbourABI-0.0.1-SNAPSHOT.jar >/usr/local/springboot/barbour-api.log & 
+
+
+
+post steps:
+Execute Windows batch command
+    command:  rd D:\JenkinsHome\jobs\Pre-Prod-Barbour_ABI_Scheduler\workspace\target
+Execute windows batch command
+    command: cd BarbourABISchedulor
+             git checkout origin/scheduler-pre-prod-conf -- ./src/main/resources/database.properties
+             git checkout origin/scheduler-pre-prod-conf -- ./src/main/resources/settings.properties
+
 
 
