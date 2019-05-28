@@ -520,7 +520,28 @@ hrlnxpd2105
  
 add
  		
+    
 
+Extended E-mail Notification    
+   SMTP Server - internalrelay.hayshps.com
+  
+  
+E-mail Notification
+   SMTP server - internalrelay.hayshps.com
+   Default user e-mail suffix - @hays.com
+   
+Publish over SSH
+   
+   
+   
+   
+   
+   
+   
+ 10.50.86.6:8080 
+administrator
+Bu!ldS3rv3r@123
+  
 
  		
 
