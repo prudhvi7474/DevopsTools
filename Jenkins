@@ -487,4 +487,30 @@ Execute windows batch command
              git checkout origin/scheduler-pre-prod-conf -- ./src/main/resources/settings.properties
 
 
+configure system
+
+Server Groups Center
+ 	Server Group List :	 Group Name- springboot
+  SSH Port	
+22
+
+ 	User Name	
+txmroot
+
+ 	Password	
+•••••••••
+server list
+   	Server Group:		
+ 	Server Name	
+hrlnxpd2105
+
+ 	Server IP	
+10.190.8.39
+
+ 		
+
+
+ 		
+
+
 
