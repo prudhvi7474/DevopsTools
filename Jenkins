@@ -23,13 +23,13 @@ Advantage of contnuous integration
 
 Consider the 'Jenkins home directory' as a database. It’s very important to take care of it. This folder handles from simple
 configurations upto your entire automation jobs. by default path will be 
-JENKINS_HOME = /var/lib/jenkins             // Linux
+JENKINS_HOME = /var/lib/jenkins             // For Linux
                                 Jobs
                                 Workspace - source code will be pulled here from Github/svn, when you build the job, war will be created
                                             in target folder automatically
                                 plugins   - stores plugins here
                                 etc...
-JENKINS_HOME = c:\ProgramFiles(x86)\Jenkins  // windows
+JENKINS_HOME = c:\ProgramFiles(x86)\Jenkins  // For windows
 
 
 under user's home directory - this is for customization
@@ -79,22 +79,44 @@ Go to Jenkins -> Manage Jenkins
 
 
 Freestyleproject
-MavenProject         - This is for Maven specific project, it takes th eadvantage of you r pom files, it drastically reduces the configuration
+MavenProject         - This is for Maven specific project, it takes the advantage of your pom files, it drastically reduces the configuration
 Pipeline project
 MultiBranch Pipeline project
 If you want to Create a New job from existing Job, then we have an option 'Copy from'
 
 
-
+How to Configure a Job:
+-------------------------
 Source Code Management
+
 Build Triggers           - it will tell, how do shcedule the jobs in jenkins
-   1. Trigger builds remotely (e.g., from scripts)
-   2. Build after other projects are built
-   3. Build periodically
-   4. Poll SCM
-   5. GitHub hook trigger for GITScm polling
-Add Build Steps
-Add Post Build Actions
+     1. Trigger builds remotely (e.g., from scripts)
+     2. Build after other projects are built
+     3. Build periodically
+     4. Poll SCM
+     5. GitHub hook trigger for GITScm polling
+     
+Add Build Steps(for pre-build or post-build or build step)
+     1. Execute Shell
+     2. Execute windows batch commands
+     3. Invoke top level Maven targets
+     4. send files or execute commands over ssh
+     5. Windows power shell
+For Maven specific Project, you need to enter
+     Root POM - pom.xml
+     Goals and options - mvn clean package  // you can specify maven goal
+     
+Add Post Build Actions   - it will tell, what are the activities we need to perform after creating the package, activities like 
+     1. Archive the artifacts
+     2. Build other projects
+     3. Publish TestNG results
+     4. Deploy war/ear to a container
+     5. send build artifacts to s3 bucket
+     6. send build artifacts over ssh
+     7. send email notifications
+     etc......
+
+     
 
 
 
