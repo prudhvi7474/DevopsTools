@@ -25,7 +25,8 @@ Consider the 'Jenkins home directory' as a database. It’s very important to ta
 configurations upto your entire automation jobs. by default path will be 
 JENKINS_HOME = /var/lib/jenkins             // Linux
                                 Jobs
-                                Workspace
+                                Workspace - source code will be pulled here from Github/svn, when you build the job, war will be created
+                                            in target folder automatically
                                 plugins   - stores plugins here
                                 etc...
 JENKINS_HOME = c:\ProgramFiles(x86)\Jenkins  // windows
@@ -35,12 +36,60 @@ under user's home directory - this is for customization
 c:\Users\Sudha\Jenkins // for windows
 /root/Jenkins          // for Linux
 /home/Sudha/Jenkins
-                                
-
+                      
+                      
+                      
+JENKINS_HOME
+ +- config.xml     (jenkins root configuration)
+ +- *.xml          (other site-wide configuration files)
+ +- userContent    (files in this directory will be served under your http://server/userContent/)
+ +- fingerprints   (stores fingerprint records)
+ +- plugins        (stores plugins)
+ +- workspace (working directory for the version control system)
+     +- [JOBNAME] (sub directory for each job)
+ +- jobs
+     +- [JOBNAME]      (sub directory for each job)
+         +- config.xml     (job configuration file)
+         +- latest         (symbolic link to the last successful build)
+         +- builds
+             +- [BUILD_ID]     (for each build)
+                 +- build.xml      (build result summary)
+                 +- log            (log file)
+                 +- changelog.xml  (change log)                      
+                      
+                      
+                      
+                      
 how to check jenkins logs on Mac/Linux
 /var/log/jenkins/jenkins.log
 or 
 Go to Manage jenkins -> system logs
+
+
+
+Below are the things we need to Notice
+Go to Jenkins -> Manage Jenkins
+1.configure system   -  this is for global settings and paths
+2.Global Tool Configuration - this is for configure tools and their locations
+3.Configure Global Security - this is for Jenkins security 
+4.Manage Nodes - To Add, remove and monitor Slave machines
+5.Manage and Assign Roles - this is for creating role and assign them to the users/groups
+6.Manage Users  - create, deleteing and modifying the users to log in to the jenkins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 how to increase Jenkins Heap space?
 A.We use Jennkins extensively, masters running on 96GB RAM, 4-core Xeon machines, with up to 100 slave machines. The main problems are:
@@ -238,7 +287,6 @@ transfer files or execute commands remotely
 
 
 
-Jenkins home directory  c:\program Files (X86)\Jenkins
 
 
 Jenkins errors:
