@@ -78,7 +78,35 @@ Go to Jenkins -> Manage Jenkins
 
 
 
+Freestyleproject
+MavenProject         - This is for Maven specific project, it takes th eadvantage of you r pom files, it drastically reduces the configuration
+Pipeline project
+MultiBranch Pipeline project
+If you want to Create a New job from existing Job, then we have an option 'Copy from'
 
+
+
+Source Code Management
+Build Triggers           - it will tell, how do shcedule the jobs in jenkins
+   1. Trigger builds remotely (e.g., from scripts)
+   2. Build after other projects are built
+   3. Build periodically
+   4. Poll SCM
+   5. GitHub hook trigger for GITScm polling
+Add Build Steps
+Add Post Build Actions
+
+
+
+
+
+
+
+
+
+
+
+                      
 
 
 
