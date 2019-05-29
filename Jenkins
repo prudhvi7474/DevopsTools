@@ -115,6 +115,13 @@ Add Post Build Actions   - it will tell, what are the activities we need to perf
      6. send build artifacts over ssh
      7. send email notifications
      etc......
+     
+     
+     
+how to route the traffic     
+https://dzone.com/articles/implementing-aws-virtual-private-cloud-vpc-infrast
+https://dzone.com/articles/aws-vpc-networking-beginners
+https://www.assistanz.com/creating-vpc-public-private-subnets/     
 
      
 
