@@ -22,8 +22,20 @@ Advantage of contnuous integration
 
 
 Consider the 'Jenkins home directory' as a database. It’s very important to take care of it. This folder handles from simple
-configurations upto your entire automation jobs.
-/var/lib/jenkins
+configurations upto your entire automation jobs. by default path will be 
+JENKINS_HOME = /var/lib/jenkins             // Linux
+                                Jobs
+                                Workspace
+                                plugins   - stores plugins here
+                                etc...
+JENKINS_HOME = c:\ProgramFiles(x86)\Jenkins  // windows
+
+
+under user's home directory - this is for customization
+c:\Users\Sudha\Jenkins // for windows
+/root/Jenkins          // for Linux
+/home/Sudha/Jenkins
+                                
 
 how to check jenkins logs on Mac/Linux
 /var/log/jenkins/jenkins.log
